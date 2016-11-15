@@ -14,6 +14,10 @@
 <table class="table">
     
     <div class="panel-group">
+        @if (Model == null)
+        {
+            <h2>Aun no tienes proyectos.</h2>
+        }
         @foreach (var item in Model)
         {
             
@@ -67,7 +71,7 @@
                                     @Html.DisplayFor(modelItem => item.proyecto.estadoProyecto)
                                     
                                     <br />
-                                    @Html.ActionLink("Detalles ", "Details", new { id = item.ProyectoId })
+                                    @Html.ActionLink("Detalles", "Details", new { id = item.ProyectoId })
                                     @if(item.rolUsuario.Equals("administrador"))
                                     {                                          
                                          @Html.ActionLink("Editar ", "Edit", new { id = item.ProyectoId })
