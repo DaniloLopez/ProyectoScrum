@@ -299,7 +299,7 @@
     <Content Include="Views\Proyectoes\CrearProyecto.cshtml" />
     <Content Include="Views\Proyectoes\Delete.cshtml" />
     <Content Include="Views\Proyectoes\Details.cshtml" />
-    <Content Include="Views\Proyectoes\Edit.cshtml" />
+    <Content Include="Views\Proyectoes\EditarProyecto.cshtml" />
     <Content Include="Views\Usuarios\InicioSesion.cshtml" />
     <Content Include="Views\Usuarios\RegistrarUsuario.cshtml" />
     <Content Include="Views\Proyectoes\Index.cshtml" />

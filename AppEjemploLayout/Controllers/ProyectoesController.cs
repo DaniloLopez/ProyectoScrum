@@ -79,7 +79,7 @@ namespace AppEjemploLayout.Controllers
         }
 
         // GET: Proyectoes/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult EditarProyecto(int? id)
         {
             if (id == null)
             {
@@ -98,7 +98,7 @@ namespace AppEjemploLayout.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProyectoId,nombreProyecto,descripcionProyecto,fechaInicioProyecto,fechaFinalizacionProyecto,estadoProyecto")] Proyecto proyecto)
+        public ActionResult EditarProyecto([Bind(Include = "ProyectoId,nombreProyecto,descripcionProyecto,fechaInicioProyecto,fechaFinalizacionProyecto,estadoProyecto")] Proyecto proyecto)
         {
             if (ModelState.IsValid)
             {
