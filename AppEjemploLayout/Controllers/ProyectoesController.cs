@@ -72,7 +72,7 @@ namespace AppEjemploLayout.Controllers
                 db.ProyectoUsuario.Add(p);
                 db.SaveChanges();
                 
-                return RedirectToAction("Index");
+                return RedirectToAction("AgregarIntegrante");
             }
 
             return View(proyecto);
