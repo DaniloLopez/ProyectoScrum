@@ -1,0 +1,59 @@
+.fondo_login {
+  padding-top: 40px;
+  padding-bottom: 40px; 
+  /* Ubicación de la imagen */
+
+    /*background-image: url(../images/11.jpg);*/
+    /* Nos aseguramos que la imagen de fondo este centrada vertical y
+      horizontalmente en todo momento */
+    background-position: center center;
+    /* La imagen de fondo no se repite */
+    background-repeat: no-repeat;
+    /* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando
+       la altura del contenido supere la altura de la imagen. */
+    background-attachment: fixed;
+    /* La imagen de fondo se reescala cuando se cambia el ancho de ventana
+       del navegador */
+    background-size: cover;
+    /* Fijamos un color de fondo para que se muestre mientras se está
+      cargando la imagen de fondo o si hay problemas para cargarla  */
+    background-color: #D8D8D8;
+}
+ 
+.login {
+  max-width: 30px;
+  padding: 15px;
+  margin: 0 auto; 
+}
+ 
+#inicio{
+	max-width: 340px;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    border-radius: 6%;
+    padding: 10px;
+  }
+    #inicio button {
+        margin-left: 18px;
+        width: 90%;
+    }
+    #inicio a {
+        margin-left: 18px;
+        width: 90%;
+    }
+    #inicio label {
+        margin-left: 18px;
+    }
+
+#avatar{
+  width: 96px;
+  height: 96px;
+  margin: 0px auto 10px;
+  display: block;
+  border-radius: 50%;
+ } 
+
+ #foot{
+  color: black;
+ }

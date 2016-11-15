@@ -1,0 +1,86 @@
+﻿@model IEnumerable<AppEjemploLayout.Models.Proyecto_Usuario.ProyectoUsuarioRelacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Agregar proyecto nuevo", "CrearProyecto")
+</p>
+
+
+<h2>Tus proyectos</h2>
+
+<table class="table">
+    
+    <div class="panel-group">
+        @foreach (var item in Model)
+        {
+            
+            <tr>
+                @{
+                    string tipo = "";
+                    if (item.proyecto.estadoProyecto.CompareTo("abierto") == 0)
+                    {
+                        tipo = "panel-info";
+                    }
+                    if (item.proyecto.estadoProyecto.CompareTo("cancelado") == 0)
+                    {
+                        tipo = "panel-danger";
+                    }
+                    if (item.proyecto.estadoProyecto.CompareTo("finalizado") == 0)
+                    {
+                        tipo = "panel-success";
+                    }
+                    if(item.proyecto.estadoProyecto.CompareTo("finalizado") != 0 && 
+                        item.proyecto.estadoProyecto.CompareTo("cancelado") != 0 && 
+                        item.proyecto.estadoProyecto.CompareTo("abierto") != 0)
+                    {
+                        tipo = "panel-default";
+                    }
+                }
+                <div class="panel @tipo">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" href="#@item.ProyectoId" aria-expanded="true">
+                                @Html.DisplayFor(modelItem => item.proyecto.nombreProyecto)
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="@item.ProyectoId" class="panel-collapse collapse">
+                        <div class="panel-body">                            
+                                <div class="form-group">                                                                                                                       
+                                    <label>Descripción</label>
+                                    @Html.DisplayFor(modelItem => item.proyecto.descripcionProyecto)
+                                    <br />
+
+                                    <label>Fecha inicio</label>
+                                    @Html.DisplayFor(modelItem => item.proyecto.fechaInicioProyecto)
+                                    
+                                    <br />
+                                    <label>Fecha fin</label>
+                                    @Html.DisplayFor(modelItem => item.proyecto.fechaFinalizacionProyecto)
+
+                                    <br />
+                                    <label>Estado</label>
+                                    @Html.DisplayFor(modelItem => item.proyecto.estadoProyecto)
+                                    
+                                    <br />
+                                    @Html.ActionLink("Detalles", "Details", new { id = item.ProyectoId })
+                                    @if(item.rolUsuario.Equals("administrador"))
+                                    {                                          
+                                         @Html.ActionLink("Editar", "Edit", new { id = item.ProyectoId })
+                                         @Html.ActionLink("Eliminar", "Delete", new { id = item.ProyectoId }) 
+                                    }                                           
+                                    
+                                </div>                                                            
+                        </div>
+                    </div>
+
+                </div>                
+            </tr>
+        }
+    </div>
+
+</table>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum ++</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Production Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+                Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <!-- //for-mobile-apps -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="logo">
+                        <h1>@Html.ActionLink("Scrum + +", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</h1>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                    <nav>
+                        <ul class="nav navbar-nav">
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li>@Html.ActionLink("INICIO", "Index", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
+                            <li>@Html.ActionLink("DESCUBRIR", "About", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
+                            <li>@Html.ActionLink("SOPORTE", "Contact", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li>@Html.Partial("_LoginPartial")</li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+
+    @if (Session["NombreUsuario"] != null)
+    {
+        <footer class="footer2">
+            <div class="w3agile_footer_copy">
+                <p>© Producción 2016. Todos los derechos reservados | Diseñado por <a href="http://w3layouts.com/">W3layouts.</a></p>
+            </div>
+        </footer>
+    }
+    else
+    {
+        <footer class="footer">
+            <div class="container">
+                <div class="col-md-4 agileinfo_footer_grid">
+                    <h4>Acerca de nosotros</h4>
+                    <p>
+                        Somos un equipo de desarrollo joven y poco numeroso, nuestra ambición es crecer como grupo y lo más
+                        importante mantener un ambiente de trabajo agradable.
+                        <span>Deseamos hacer las cosas de la forma adecuada y procurando brindar una buena experiencia a todos nuestro usuarios.</span>
+                    </p>
+                </div>
+                <div class="col-md-4 agileinfo_footer_grid">
+                    <h4>Equipo de desarrollo</h4>
+                    <div class="agileinfo_footer_grid1">
+                        <a href="single.html"><img src="~/images/3.jpg" alt="equipo1" class="img-responsive"></a>
+                    </div>
+                    <div class="agileinfo_footer_grid1">
+                        <a href="single.html"><img src="~/images/12.jpg" alt="equipo2" class="img-responsive"></a>
+                    </div>
+                    <div class="agileinfo_footer_grid1">
+                        <a href="single.html"><img src="~/images/5.jpg" alt="equipo3" class="img-responsive"></a>
+                    </div>
+                    <div class="agileinfo_footer_grid1">
+                        <a href="single.html"><img src="~/images/7.jpg" alt="equipo4" class="img-responsive"></a>
+                    </div>
+                    <div class="agileinfo_footer_grid1">
+                        <a href="single.html"><img src="~/images/8.jpg" alt="equipo5" class="img-responsive"></a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-4 agileinfo_footer_grid">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Unicauca, Popayán Cauca, Colombia.</li>
+                        <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">scrum++&#64;gmail.com</a></li>
+                        <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> (+57) 3104909172</li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+                <div class="w3agile_footer_copy">
+                    <p>© Producción 2016. Todos los derechos reservados | Diseñado por <a href="http://w3layouts.com/">W3layouts.</a></p>
+                </div>
+            </div>
+        </footer>
+    }
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/index")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

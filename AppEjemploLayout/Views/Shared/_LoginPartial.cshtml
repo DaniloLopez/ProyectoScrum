@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Session["NombreUsuario"]!=null)
+{
+    using (Html.BeginForm("CerrarSesion", "Usuarios", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" id="menu1" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>
+                    @Session["NombreUsuario"]
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+
+                    <li>@Html.ActionLink("PERFIL", "InformacionUsuario", "Usuarios", null)</li>
+
+                    <li role="presentation">
+                        @Html.ActionLink("Administrar", "Index", "Manage", routeValues: null, htmlAttributes: new { })
+                    </li>
+                    <li role="presentation" class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("REGISTRARSE", "RegistrarUsuario", "Usuarios", null, htmlAttributes: new { @class = "hvr-sweep-to-bottom" })</li>
+        <li>@Html.ActionLink("INICIAR SESIÓN", "InicioSesion", "Usuarios", null, htmlAttributes: new { @class = "hvr-sweep-to-bottom" })</li>
+    </ul>
+}

@@ -1,0 +1,67 @@
+﻿.contenido {
+    width: 80%;
+    border-radius: 4px;
+    overflow: hidden;	
+    margin: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 15px;
+    min-height: 65vh;
+}
+
+    .contenido h2 {
+        padding-bottom: 30px;
+    }
+    .contenido input {
+        width: 60%;
+    }
+    .contenido button {
+        width: 15%;
+    }
+
+    .contenido table{
+        margin-top: 40px;
+        width:75%;
+        display: table;
+        overflow:auto;
+        border-spacing: 0;
+        border-collapse: collapse;
+        border-radius: 5px; 
+       -moz-box-shadow: 0px 0px 8px #444;
+       -webkit-box-shadow: 0px 0px 8px #444;
+       -moz-border-radius: 5px;
+       -webkit-border-radius: 5px;
+    }
+
+    .contenido select{
+        height: auto;
+        font-size:12px;
+    }
+    #agregar-button {
+        width: auto;
+        height: auto;
+    }
+
+#form-centrado {
+    width: 50%;
+}
+    #form-centrado h2 {
+        text-align: center;
+    }
+
+    #form-centrado form {
+        width:90%;
+        margin-right:5%;
+    }
+
+    #form-centrado label{
+        width:30%;
+        margin-left:5%;
+        margin-bottom:15px;
+    }
+    #form-centrado button{
+       float:right;
+       margin-left:20px;
+    }
+
+   

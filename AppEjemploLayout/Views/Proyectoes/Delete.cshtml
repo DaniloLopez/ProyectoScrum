@@ -1,0 +1,64 @@
+﻿@model AppEjemploLayout.Models.ClasesProyecto.Proyecto
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar proyecto</h2>
+
+<h3>¿Esta seguro que desea eliminar el proyecto?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreProyecto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcionProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcionProyecto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaInicioProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaInicioProyecto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaFinalizacionProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaFinalizacionProyecto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estadoProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadoProyecto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

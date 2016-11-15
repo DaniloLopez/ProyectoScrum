@@ -1,0 +1,98 @@
+﻿@model AppEjemploLayout.Models.ClasesUsuario.Registro
+
+@{
+    ViewBag.Title = "RegistrarUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="portfolio fondo_login">
+        <!-- registrando Usuario -->
+        <div class="container well" id="form-centrado">
+            <div class="row">
+                <div><h2>Registrarse</h2></div>
+            </div>
+            <br /><br />
+            <form class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.nombresUsuario, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.nombresUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nombresUsuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.apellidosUsuario, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.apellidosUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.apellidosUsuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.aliasUsuario, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.aliasUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.aliasUsuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.correoElectronicoUsuario, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.correoElectronicoUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.correoElectronicoUsuario, "", new { @class = "text-danger" })
+                        @if (Session["ExisteUsuario"] != null && (bool)Session["ExisteUsuario"])
+                        {
+                            <p class="text-danger">El correo ya se encuentra registrado</p>
+                            Session["ExisteUsuario"] = null;
+                        }
+                        
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.contraseñaUsuario, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.contraseñaUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.contraseñaUsuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.ComparePass, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.ComparePass, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ComparePass, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+               
+                <div class="form-group row">
+                    <div class="col-md-10">
+                        <button type="submit" value="RegistrarUsuario" class="btn btn-success btn-lg">
+                            <span class="glyphicon glyphicon-floppy-disk"></span> Guardar
+                        </button>
+                        <button type="button" class="btn btn-danger btn-lg">
+                            <span class="glyphicon glyphicon-remove-circle"></span> Cancelar
+                        </button>
+
+                    </div>
+                </div>
+
+                <br />
+
+            </form>
+        </div>
+        <!-- //registro usuario -->
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
