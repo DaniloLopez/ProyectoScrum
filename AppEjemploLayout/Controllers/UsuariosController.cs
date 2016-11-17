@@ -142,6 +142,7 @@ namespace AppEjemploLayout.Controllers
             }
             catch
             {
+                Session["FalloSesion"] = true;
                 return View();
             }
             
