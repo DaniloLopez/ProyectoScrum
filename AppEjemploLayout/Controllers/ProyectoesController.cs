@@ -136,7 +136,7 @@ namespace AppEjemploLayout.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult RegistrarUsuario(int? IdProyecto)
+        public ActionResult LustaUsuarios(int? IdProyecto)
         {
             if (IdProyecto == null)
             {
