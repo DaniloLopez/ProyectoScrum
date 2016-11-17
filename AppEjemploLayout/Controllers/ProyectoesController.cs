@@ -147,8 +147,8 @@ namespace AppEjemploLayout.Controllers
             {
                 return HttpNotFound();
             }
-            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.);
-            return View(proyecto);
+            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.proyecto).ToList();
+            return View(lista);
         }
 
         protected override void Dispose(bool disposing)
