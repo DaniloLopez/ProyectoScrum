@@ -136,7 +136,7 @@ namespace AppEjemploLayout.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult LustaUsuarios(int? IdProyecto)
+        public ActionResult ListaUsuarios(int? IdProyecto)
         {
             if (IdProyecto == null)
             {
@@ -147,6 +147,29 @@ namespace AppEjemploLayout.Controllers
             {
                 return HttpNotFound();
             }
+
+            //SE MIRA SI EL USUARIO QUE ESTA CONSULTANDO LOS INTEGRANTES DEL PROYECTO ES EL ADMINISTRADOR
+            //EN CASO DE QUE SEA SE LE DA PERMISO DE EDITAR SINO SOLAMENTE SE MOSTRARA LOS INTEGRANTES
+            string usuario = Session["NombreUsuario"].ToString();
+            var validacion = db.ProyectoUsuario.Where(p=>p.ProyectoId==IdProyecto);
+            
+            foreach(ProyectoUsuarioRelacion i in validacion)
+            {
+                if (i.correoElectronicoUsuario.CompareTo((string)Session["NombreUsuario"]) == 0)
+                {
+                    if (i.rolUsuario.CompareTo("administrador") == 0)
+                    {
+                        Session["PermisoEditarUsuariosProyecto"] = true;
+                    }
+                    else
+                    {
+                        Session["PermisoEditarUsuariosProyecto"] = false;
+                        return View();
+                    }
+                    break;
+                }
+            }
+                        
             var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.proyecto).ToList();
             return View(lista);
         }

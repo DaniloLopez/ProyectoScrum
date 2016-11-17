@@ -316,8 +316,8 @@
     <Content Include="Views\Proyectoes\EditarProyecto.cshtml" />
     <Content Include="Views\Usuarios\InicioSesion.cshtml" />
     <Content Include="Views\Proyectoes\Index.cshtml" />
-    <Content Include="Views\Proyectoes\AgregarIntegrante.cshtml" />
     <Content Include="Views\Proyectoes\ListaUsuarios.cshtml" />
+    <Content Include="Views\Usuarios\RegistrarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
