@@ -134,7 +134,22 @@ namespace AppEjemploLayout.Controllers
             db.ProyectoUsuario.RemoveRange(db.ProyectoUsuario.Where(p => p.ProyectoId.Equals(id)).ToList());
             db.SaveChanges();
             return RedirectToAction("Index");
-        }       
+        }
+
+        public ActionResult RegistrarUsuario(int? IdProyecto)
+        {
+            if (IdProyecto == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Proyecto proyecto = db.Proyectoes.Find(IdProyecto);
+            if (proyecto == null)
+            {
+                return HttpNotFound();
+            }
+            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.);
+            return View(proyecto);
+        }
 
         protected override void Dispose(bool disposing)
         {
