@@ -11,15 +11,19 @@
     @Html.AntiForgeryToken()
     <div class="fondo_login">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <br />
+        
+        <h1 class="text-center"><strong>Scrum++</strong></h1><br />
+        <h3 class="text-center">Inicio de sesión</h3>
+        <br/>
         <div class="container well" id="inicio">
             <div class="row">
+                <br />
                 <div class="col-xs-12">
                     <img src="~/images/co.png" class="image-responsive" id="avatar">
                 </div>
+                
                 <form class="login" action="#" method="POST">
                     <div class="form-group">
-                        
                         <div class="col-md-12">
                             @Html.EditorFor(model => model.correoSesion, new { htmlAttributes = new { @class = "form-control" , @placeholder = "Correo electrónico" } })
                             @Html.ValidationMessageFor(model => model.correoSesion, "", new { @class = "text-danger" })
