@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "AgregarIntegrante";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="contenido">
+    <h2>Agregar integrante al equipo</h2>
+    <br />
+
+    <div>
+        <div>
+            <input autocomplete="on" alt="filtrar" name="filtrarUsuarios" class="btn btn-default" placeholder="Buscar por correo (Ej: ejemplo@dominio.com)" />
+            <button name="filtrar" class="btn btn-primary" title="Buscar"><h4><span class="glyphicon glyphicon-search"></span></h4></button>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Alias</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>&nbsp;&nbsp;&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>Juanito</td>
+                        <td>juanp@hotmail.com</td>
+                        <td>
+                            <select>
+                                <option value="product owner">Product owner</option>
+                                <option value="scrum master">Scrum master</option>
+                                <option default value="equipo de desarrollo">Equipo de desarrollo</option>
+                            </select>
+                        </td>
+                        <td><button type="button" id="agregar-button" class="btn btn-success" title="Agregar al equipo"><span class="glyphicon glyphicon-plus"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

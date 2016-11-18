@@ -10,7 +10,7 @@ namespace AppEjemploLayout.Models.ClasesUsuario
     {
         public int Id { get; set; }
 
-        [StringLength(100, ErrorMessage = "Este campo debe tener maximo 50 caracteres"  )]
+        [StringLength(100, ErrorMessage = "Este campo debe tener maximo 100 caracteres"  )]
         [EmailAddress]
         [Required(ErrorMessage ="Por favor ingrese su correo electronico")]
         [Display(Name = "Correo Electronico*:")]
