@@ -7,13 +7,13 @@ namespace AppEjemploLayout.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class migracion1 : IMigrationMetadata
+    public sealed partial class ultima : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migracion1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ultima));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611010032351_migracion1"; }
+            get { return "201611181510111_ultima"; }
         }
         
         string IMigrationMetadata.Source
