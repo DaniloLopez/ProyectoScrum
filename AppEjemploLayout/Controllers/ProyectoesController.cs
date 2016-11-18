@@ -72,7 +72,7 @@ namespace AppEjemploLayout.Controllers
                 db.ProyectoUsuario.Add(p);
                 db.SaveChanges();
                 
-                return RedirectToAction("AgregarIntegrante");
+                return RedirectToAction("ListaUsuarios",new {IdProyecto=p.ProyectoId});
             }
 
             return View(proyecto);
@@ -170,7 +170,7 @@ namespace AppEjemploLayout.Controllers
                 }
             }
                         
-            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.proyecto).ToList();
+            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.proyecto).Include(u=>u.usuario).ToList();
             return View(lista);
         }
 

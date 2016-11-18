@@ -25,8 +25,6 @@ namespace AppEjemploLayout.Controllers
         }
 
         // GET: Usuarios/Details/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult InformacionUsuario()
         {
             
