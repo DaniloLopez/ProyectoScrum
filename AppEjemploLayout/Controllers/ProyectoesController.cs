@@ -30,16 +30,21 @@ namespace AppEjemploLayout.Controllers
         // GET: Proyectoes/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            if (Session["Usuario"] != null && (bool)Session["Usuario"] != false)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Proyecto proyecto = db.Proyectoes.Find(id);
+                if (proyecto == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(proyecto);
             }
-            Proyecto proyecto = db.Proyectoes.Find(id);
-            if (proyecto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(proyecto);
+            return RedirectToAction("InicioSesion", "Usuarios", null);
+            
         }
 
         // GET: Proyectoes/Create
