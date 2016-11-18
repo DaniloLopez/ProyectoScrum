@@ -315,7 +315,7 @@
     <Content Include="Views\Usuarios\EditarUsuario.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Proyectoes\CrearProyecto.cshtml" />
-    <Content Include="Views\Proyectoes\EliminarProyecto.cshtml" />
+    <Content Include="Views\Proyectoes\Delete.cshtml" />
     <Content Include="Views\Proyectoes\Details.cshtml" />
     <Content Include="Views\Proyectoes\EditarProyecto.cshtml" />
     <Content Include="Views\Usuarios\InicioSesion.cshtml" />
