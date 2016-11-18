@@ -8,6 +8,7 @@
     });
 };
 
+
 function cargarAutocompletado(inputName, baseurl, fun) {
     var options = {
         url: function (searchText) {
