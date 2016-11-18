@@ -32,10 +32,10 @@ namespace AppEjemploLayout
 
             bundles.Add(new ScriptBundle("~/bundles/autocompletado").Include(
                 "~/Scripts/jquery.easy-autocomplete.min.js",
-                "~/Scripts/ScriptsProyectos/ManejoEventos.js"));
+                "~/Scripts/ScriptsProyecto/ManejoEventos.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/eventosProyecto").Include(
-                "~/Scripts/ScriptsProyectos/ManejoEventos.js"));
+                "~/Scripts/ScriptsProyecto/ManejoEventos.js"));
 
             bundles.Add(new StyleBundle("~/Content/autocompletado").Include(
                 "~/Content/easy-autocomplete.min.css",
