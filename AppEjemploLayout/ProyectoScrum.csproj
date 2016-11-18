@@ -213,6 +213,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\chocolat.css" />
+    <Content Include="Content\easy-autocomplete.min.css" />
+    <Content Include="Content\easy-autocomplete.themes.min.css" />
     <Content Include="Content\estilo.css" />
     <Content Include="Content\estilo_login.css" />
     <Content Include="Content\flexslider.css" />
@@ -258,6 +260,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery.chocolat.js" />
+    <Content Include="Scripts\jquery.easy-autocomplete.min.js" />
     <Content Include="Scripts\jquery.filterizr.js" />
     <Content Include="Scripts\jquery.flexslider.js" />
     <Content Include="Scripts\jquery.magnific-popup.js" />
@@ -270,6 +273,7 @@
     <Content Include="Scripts\move-top.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ScriptsProyecto\ManejoEventos.js" />
     <Content Include="Scripts\smoothbox.jquery2.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -310,7 +314,7 @@
     <Content Include="Views\Usuarios\EditarUsuario.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Proyectoes\CrearProyecto.cshtml" />
-    <Content Include="Views\Proyectoes\EliminarProyecto.cshtml" />
+    <Content Include="Views\Proyectoes\Delete.cshtml" />
     <Content Include="Views\Proyectoes\Details.cshtml" />
     <Content Include="Views\Proyectoes\EditarProyecto.cshtml" />
     <Content Include="Views\Usuarios\InicioSesion.cshtml" />

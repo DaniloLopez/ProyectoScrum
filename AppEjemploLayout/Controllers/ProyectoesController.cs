@@ -111,7 +111,7 @@ namespace AppEjemploLayout.Controllers
 
         //ANOTACION SI SE VA A ELIMINAR EL PROYECTO SE DEBE ELIMINAR TODA LA INFORMACION ASOSCIADA AL PROYECTO NO SOLO EL PROYECTO
         // GET: Proyectoes/Delete/5
-        public ActionResult EliminarProyecto(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -126,7 +126,7 @@ namespace AppEjemploLayout.Controllers
         }
         //REVISAR PORQUE NO SE ESTA HACIENDO LA CONFIRMACION
         // POST: Proyectoes/Delete/5
-        [HttpPost, ActionName("EliminarProyecto")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
