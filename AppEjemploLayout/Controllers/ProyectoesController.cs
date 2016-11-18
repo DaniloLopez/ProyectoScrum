@@ -21,8 +21,8 @@ namespace AppEjemploLayout.Controllers
         {
             if (Session["Usuario"] != null && (bool)Session["Usuario"] != false)
             {
-                string usuario= Session["NombreUsuario"].ToString();
-                return View(db.ProyectoUsuario.Where(d => d.correoElectronicoUsuario.CompareTo(usuario)==0).Include(p=>p.proyecto).Include(u=>u.usuario).ToList());
+                string usuario = Session["NombreUsuario"].ToString();
+                return View(db.ProyectoUsuario.Where(d => d.correoElectronicoUsuario.CompareTo(usuario) == 0).Include(p => p.proyecto).Include(u => u.usuario).ToList());
             }
             return RedirectToAction("InicioSesion", "Usuarios", null);
         }
@@ -44,7 +44,7 @@ namespace AppEjemploLayout.Controllers
                 return View(proyecto);
             }
             return RedirectToAction("InicioSesion", "Usuarios", null);
-            
+
         }
 
         // GET: Proyectoes/Create
@@ -63,21 +63,21 @@ namespace AppEjemploLayout.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CrearProyecto(Proyecto proyecto)
-        {       
+        {
 
             if (ModelState.IsValid)
             {
-                proyecto.estadoProyecto ="abierto";     
-                
+                proyecto.estadoProyecto = "abierto";
+
                 ProyectoUsuarioRelacion p = new ProyectoUsuarioRelacion();
                 p.ProyectoId = proyecto.ProyectoId;
                 p.correoElectronicoUsuario = (string)Session["NombreUsuario"];
-                p.rolUsuario = "administrador";                
+                p.rolUsuario = "administrador";
                 db.Proyectoes.Add(proyecto);
                 db.ProyectoUsuario.Add(p);
                 db.SaveChanges();
-                
-                return RedirectToAction("ListaUsuarios",new {IdProyecto=p.ProyectoId});
+
+                return RedirectToAction("ListaUsuarios", new { IdProyecto = p.ProyectoId });
             }
 
             return View(proyecto);
@@ -157,9 +157,9 @@ namespace AppEjemploLayout.Controllers
             //SE MIRA SI EL USUARIO QUE ESTA CONSULTANDO LOS INTEGRANTES DEL PROYECTO ES EL ADMINISTRADOR
             //EN CASO DE QUE SEA SE LE DA PERMISO DE EDITAR SINO SOLAMENTE SE MOSTRARA LOS INTEGRANTES
             string usuario = Session["NombreUsuario"].ToString();
-            var validacion = db.ProyectoUsuario.Where(p=>p.ProyectoId==IdProyecto);
-            
-            foreach(ProyectoUsuarioRelacion i in validacion)
+            var validacion = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto);
+
+            foreach (ProyectoUsuarioRelacion i in validacion)
             {
                 if (i.correoElectronicoUsuario.CompareTo((string)Session["NombreUsuario"]) == 0)
                 {
@@ -175,11 +175,29 @@ namespace AppEjemploLayout.Controllers
                     break;
                 }
             }
-                        
-            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.proyecto).Include(u=>u.usuario).ToList();
+
+            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i => i.proyecto).Include(u => u.usuario).ToList();
             return View(lista);
         }
 
+        public ActionResult EliminarIntegrante(int? id)
+        {
+            return View();
+        }
+        public ActionResult AgregarIntegrante(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Proyecto proyecto = db.Proyectoes.Find(id);
+            if (proyecto == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.ID = id;
+            return View();//debe enviarle a la vista el parametro id que tiene el id del proyecto al que se va a agregar el integrnate
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
