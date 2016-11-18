@@ -74,8 +74,8 @@
                                     @Html.ActionLink("Detalles", "Details", new { id = item.ProyectoId })
                                     @if(item.rolUsuario.Equals("administrador"))
                                     {                                          
-                                         @Html.ActionLink("Editar ", "Edit", new { id = item.ProyectoId })
-                                         @Html.ActionLink("Eliminar", "Delete", new { id = item.ProyectoId }) 
+                                         @Html.ActionLink("Editar ", "EditarProyecto", new { id = item.ProyectoId })
+                                         @Html.ActionLink("Eliminar", "EliminarProyecto", new { id = item.ProyectoId }) 
                                     }                                           
                                     
                                 </div>                                                            
