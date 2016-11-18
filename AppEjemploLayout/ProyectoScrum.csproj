@@ -191,18 +191,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610312238482_migracionInicial.cs" />
-    <Compile Include="Migrations\201610312238482_migracionInicial.Designer.cs">
-      <DependentUpon>201610312238482_migracionInicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611010032351_migracion1.cs" />
-    <Compile Include="Migrations\201611010032351_migracion1.Designer.cs">
-      <DependentUpon>201611010032351_migracion1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611172356316_migracion_17_11_2016.cs" />
-    <Compile Include="Migrations\201611172356316_migracion_17_11_2016.Designer.cs">
-      <DependentUpon>201611172356316_migracion_17_11_2016.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClasesProyecto\Proyecto.cs" />
@@ -337,17 +325,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610312238482_migracionInicial.resx">
-      <DependentUpon>201610312238482_migracionInicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611010032351_migracion1.resx">
-      <DependentUpon>201611010032351_migracion1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611172356316_migracion_17_11_2016.resx">
-      <DependentUpon>201611172356316_migracion_17_11_2016.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
