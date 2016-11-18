@@ -191,10 +191,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611181510111_ultima.cs" />
-    <Compile Include="Migrations\201611181510111_ultima.Designer.cs">
-      <DependentUpon>201611181510111_ultima.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClasesProyecto\Proyecto.cs" />
@@ -206,9 +202,6 @@
     <Compile Include="Models\Proyecto_Usuario\ProyectoUsuarioRelacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <EmbeddedResource Include="Migrations\201611181510111_ultima.resx">
-      <DependentUpon>201611181510111_ultima.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
