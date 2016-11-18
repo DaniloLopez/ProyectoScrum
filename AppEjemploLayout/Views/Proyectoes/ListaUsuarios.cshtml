@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AppEjemploLayout.Models.Proyecto_Usuario.ProyectoUsuarioRelacion>
+
+@{
+    ViewBag.Title = "ListaUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RegistrarUsuario</h2>
+
+<p>
+    @Html.ActionLink("Agregar Usuario", "AgregarUsuario")
+</p>
+<table class="table">
+    <tr>        
+        <th>
+            @Html.DisplayNameFor(model => model.usuario.nombresUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario.correoElectronicoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rolUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+@if (Model == null)
+{
+    <h2>Aun no hay usuarios.</h2>
+}
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario.nombresUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario.correoElectronicoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rolUsuario)
+        </td>
+        @if (Session["PermisoEditarUsuariosProyecto"] != null && (bool)Session["PermisoEditarUsuariosProyecto"])
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        }        
+    </tr>
+}
+
+</table>

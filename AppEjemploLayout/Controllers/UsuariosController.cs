@@ -25,8 +25,6 @@ namespace AppEjemploLayout.Controllers
         }
 
         // GET: Usuarios/Details/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult InformacionUsuario()
         {
             
@@ -142,6 +140,7 @@ namespace AppEjemploLayout.Controllers
             }
             catch
             {
+                Session["FalloSesion"] = true;
                 return View();
             }
             

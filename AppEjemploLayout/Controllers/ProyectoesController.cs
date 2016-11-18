@@ -72,7 +72,7 @@ namespace AppEjemploLayout.Controllers
                 db.ProyectoUsuario.Add(p);
                 db.SaveChanges();
                 
-                return RedirectToAction("AgregarIntegrante");
+                return RedirectToAction("ListaUsuarios",new {IdProyecto=p.ProyectoId});
             }
 
             return View(proyecto);
@@ -109,8 +109,9 @@ namespace AppEjemploLayout.Controllers
             return View(proyecto);
         }
 
+        //ANOTACION SI SE VA A ELIMINAR EL PROYECTO SE DEBE ELIMINAR TODA LA INFORMACION ASOSCIADA AL PROYECTO NO SOLO EL PROYECTO
         // GET: Proyectoes/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult EliminarProyecto(int? id)
         {
             if (id == null)
             {
@@ -123,9 +124,9 @@ namespace AppEjemploLayout.Controllers
             }
             return View(proyecto);
         }
-
+        //REVISAR PORQUE NO SE ESTA HACIENDO LA CONFIRMACION
         // POST: Proyectoes/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("EliminarProyecto")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -136,7 +137,7 @@ namespace AppEjemploLayout.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult RegistrarUsuario(int? IdProyecto)
+        public ActionResult ListaUsuarios(int? IdProyecto)
         {
             if (IdProyecto == null)
             {
@@ -147,7 +148,30 @@ namespace AppEjemploLayout.Controllers
             {
                 return HttpNotFound();
             }
-            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.proyecto).ToList();
+
+            //SE MIRA SI EL USUARIO QUE ESTA CONSULTANDO LOS INTEGRANTES DEL PROYECTO ES EL ADMINISTRADOR
+            //EN CASO DE QUE SEA SE LE DA PERMISO DE EDITAR SINO SOLAMENTE SE MOSTRARA LOS INTEGRANTES
+            string usuario = Session["NombreUsuario"].ToString();
+            var validacion = db.ProyectoUsuario.Where(p=>p.ProyectoId==IdProyecto);
+            
+            foreach(ProyectoUsuarioRelacion i in validacion)
+            {
+                if (i.correoElectronicoUsuario.CompareTo((string)Session["NombreUsuario"]) == 0)
+                {
+                    if (i.rolUsuario.CompareTo("administrador") == 0)
+                    {
+                        Session["PermisoEditarUsuariosProyecto"] = true;
+                    }
+                    else
+                    {
+                        Session["PermisoEditarUsuariosProyecto"] = false;
+                        return View();
+                    }
+                    break;
+                }
+            }
+                        
+            var lista = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(i=>i.proyecto).Include(u=>u.usuario).ToList();
             return View(lista);
         }
 

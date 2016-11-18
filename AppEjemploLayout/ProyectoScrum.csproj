@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201611010032351_migracion1.Designer.cs">
       <DependentUpon>201611010032351_migracion1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611172356316_migracion_17_11_2016.cs" />
+    <Compile Include="Migrations\201611172356316_migracion_17_11_2016.Designer.cs">
+      <DependentUpon>201611172356316_migracion_17_11_2016.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClasesProyecto\Proyecto.cs" />
@@ -311,13 +315,13 @@
     <Content Include="Views\Usuarios\EditarUsuario.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Proyectoes\CrearProyecto.cshtml" />
-    <Content Include="Views\Proyectoes\Delete.cshtml" />
+    <Content Include="Views\Proyectoes\EliminarProyecto.cshtml" />
     <Content Include="Views\Proyectoes\Details.cshtml" />
     <Content Include="Views\Proyectoes\EditarProyecto.cshtml" />
     <Content Include="Views\Usuarios\InicioSesion.cshtml" />
-    <Content Include="Views\Usuarios\RegistrarUsuario.cshtml" />
     <Content Include="Views\Proyectoes\Index.cshtml" />
-    <Content Include="Views\Proyectoes\AgregarIntegrante.cshtml" />
+    <Content Include="Views\Proyectoes\ListaUsuarios.cshtml" />
+    <Content Include="Views\Usuarios\RegistrarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611010032351_migracion1.resx">
       <DependentUpon>201611010032351_migracion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611172356316_migracion_17_11_2016.resx">
+      <DependentUpon>201611172356316_migracion_17_11_2016.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
