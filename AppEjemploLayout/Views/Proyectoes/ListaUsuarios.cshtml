@@ -7,9 +7,7 @@
 
 <h2>RegistrarUsuario</h2>
 
-<p>
-    @Html.ActionLink("Agregar Usuario", "AgregarUsuario")
-</p>
+
 <table class="table">
     <tr>        
         <th>
@@ -28,7 +26,8 @@
 {
     <h2>Aun no hay usuarios.</h2>
 }
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.usuario.nombresUsuario)
@@ -39,14 +38,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.rolUsuario)
         </td>
-        @if (Session["PermisoEditarUsuariosProyecto"] != null && (bool)Session["PermisoEditarUsuariosProyecto"])
+        @if (Session["PermisoEditarUsuariosProyecto"] != null && (bool)Session["PermisoEditarUsuariosProyecto"] && item.usuario.correoElectronicoUsuario.CompareTo((string)Session["NombreUsuario"]) == 0)
         {
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Editar", "EditarRol", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.Id })
             </td>
         }        
     </tr>
+
+    <p>
+        @Html.ActionLink("Agregar Integrante", "AgregarIntegrante", new { id = item.proyecto.ProyectoId })
+    </p>
 }
 
 </table>
