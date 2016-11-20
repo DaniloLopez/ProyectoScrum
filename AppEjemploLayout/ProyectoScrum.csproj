@@ -195,6 +195,10 @@
     <Compile Include="Migrations\201611181542140_migracion_1.Designer.cs">
       <DependentUpon>201611181542140_migracion_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611201537393_d_20.11.2016_10.34.cs" />
+    <Compile Include="Migrations\201611201537393_d_20.11.2016_10.34.Designer.cs">
+      <DependentUpon>201611201537393_d_20.11.2016_10.34.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClasesHistoriaUsuario\HistoriaUsuario.cs" />
@@ -335,6 +339,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611181542140_migracion_1.resx">
       <DependentUpon>201611181542140_migracion_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201537393_d_20.11.2016_10.34.resx">
+      <DependentUpon>201611201537393_d_20.11.2016_10.34.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
