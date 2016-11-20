@@ -197,6 +197,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ClasesHistoriaUsuario\HistoriaUsuario.cs" />
     <Compile Include="Models\ClasesProyecto\Proyecto.cs" />
     <Compile Include="Models\ClasesUsuario\InicioSesion.cs" />
     <Compile Include="Models\ClasesUsuario\Registro.cs" />
