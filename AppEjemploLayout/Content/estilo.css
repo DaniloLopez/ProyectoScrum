@@ -94,3 +94,8 @@
 .ubicar-derecha {
     padding-left: 10%;
 }
+
+#espacio-izquierda {
+    margin-right:30px;
+    margin-left:10%;
+}

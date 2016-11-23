@@ -4,76 +4,101 @@
     ViewBag.Title = "EditarProyecto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br /><br />
 
-<h2>Editar proyecto</h2>
 
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ProyectoId)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombreProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombreProyecto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombreProyecto, "", new { @class = "text-danger" })
-            </div>
+<div class="contenido">
+        <div class="text-center">
+            <h2>Editar proyecto</h2>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.descripcionProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.descripcionProyecto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.descripcionProyecto, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechaInicioProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechaInicioProyecto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fechaInicioProyecto, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <div class="container">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.fechaFinalizacionProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fechaFinalizacionProyecto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fechaFinalizacionProyecto, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ProyectoId)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.estadoProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @{ 
-                    List<SelectListItem> lista = new List<SelectListItem>();
-                    lista.Add(new SelectListItem { Text = "ABIERTO", Value = "abierto" });
-                    lista.Add(new SelectListItem { Text = "CANCELADO", Value = "cancelado" });
-                    lista.Add(new SelectListItem { Text = "FINALIZADO", Value = "finalizado" });
-                }
-                @Html.DropDownListFor(model => model.estadoProyecto, lista);
-            </div>
-        </div>
+                <div class="table-responsive">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-default" />
-            </div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            <label>Nombre del proyecto:</label>
+                        </dt>
+
+                        <dd>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.nombreProyecto, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombreProyecto, "", new { @class = "text-danger" })
+                            </div>
+                        </dd>
+
+                        <dt>
+                            <label>Descripción:</label>
+                        </dt>
+
+                        <dd class="text-justify">
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(model => model.descripcionProyecto, 4, 58, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.descripcionProyecto, "", new { @class = "text-danger" })
+                            </div>
+                        </dd>
+
+                        <dt>
+                            <label>Fecha de inicio:</label>
+                        </dt>
+
+                        <dd>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.fechaInicioProyecto, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fechaInicioProyecto, "", new { @class = "text-danger" })
+                            </div>
+                        </dd>
+
+                        <dt>
+                            <label>Fecha de finalización:</label>
+                        </dt>
+
+                        <dd>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.fechaFinalizacionProyecto, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fechaFinalizacionProyecto, "", new { @class = "text-danger" })
+                            </div>
+                        </dd>
+
+                        <dt>
+                            <label>Estado:</label>
+                        </dt>
+
+                        <dd>
+                            <div class="col-md-10">
+                                @{
+                                    List<SelectListItem> lista = new List<SelectListItem>();
+                                    lista.Add(new SelectListItem { Text = "ABIERTO", Value = "abierto" });
+                                    lista.Add(new SelectListItem { Text = "CANCELADO", Value = "cancelado" });
+                                    lista.Add(new SelectListItem { Text = "FINALIZADO", Value = "finalizado" });
+                                }
+                                @Html.DropDownListFor(model => model.estadoProyecto, lista, new { htmlAttributes = new { @class = "inputs-editar" } })
+                            </div>
+                        </dd>
+
+                        <dt>&nbsp;</dt>
+                        <dd>
+                            <div class="col-md-10">
+                                <h4><input type="submit" value="Guardar" class="btn btn-success"/></h4>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>                   
+        }
+        <br/>
+        <div>
+            @Html.ActionLink("Volver", "Index")
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Volver", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
