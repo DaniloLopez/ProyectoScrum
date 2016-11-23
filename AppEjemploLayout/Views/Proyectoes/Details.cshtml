@@ -4,54 +4,60 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br /><br />
 
-<h2>Detalles del proyecto</h2>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombreProyecto)
-        </dt>
+<div class="contenido">
+    <div class="text-center">
+        <h2>@Html.DisplayFor(model => model.nombreProyecto) - Detalles del proyecto</h2>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombreProyecto)
-        </dd>
+    <div class="table-responsive">
+        
+        <dl class="dl-horizontal">
+            <dt>
+                <label>Nombre del proyecto:</label>
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.descripcionProyecto)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.nombreProyecto)
+            </dd>
+            
+            <dt>
+                <label>Descripción:</label>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.descripcionProyecto)
-        </dd>
+            <dd class="text-justify">
+                @Html.DisplayFor(model => model.descripcionProyecto)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fechaInicioProyecto)
-        </dt>
+            <dt>
+                <label>Fecha de inicio:</label>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.fechaInicioProyecto)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.fechaInicioProyecto)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fechaFinalizacionProyecto)
-        </dt>
+            <dt>
+                <label>Fecha de finalización:</label>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.fechaFinalizacionProyecto)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.fechaFinalizacionProyecto)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estadoProyecto)
-        </dt>
+            <dt>
+                <label>Estado:</label>
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.estadoProyecto)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.estadoProyecto)
+            </dd>
 
-    </dl>
-</div>
-<p>    
-    @Html.ActionLink("Volver", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Volver", "Index")
+    </p>
+    </div>
