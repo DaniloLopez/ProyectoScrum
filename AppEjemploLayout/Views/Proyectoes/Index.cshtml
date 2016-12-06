@@ -9,7 +9,6 @@
 
 <div class="contenido">
     <h2>Mis proyectos</h2>
-    <br />
 
     <div class="container">
         <div class="form-group row">
@@ -17,7 +16,7 @@
                 <a href="@Url.Action("CrearProyecto")" class="btn btn-success" title="Buscar"><h5><span class="glyphicon glyphicon-plus" id="texto-derecha"></span></h5></a>
                 @if (Model.ToList().Count > 0)
                 {
-                <a class="btn btn-danger" title="Buscar"><h5><span class="glyphicon glyphicon-minus" id="texto-derecha"></span></h5></a>
+                    <a class="btn btn-danger" title="Buscar"><h5><span class="glyphicon glyphicon-minus" id="texto-derecha"></span></h5></a>
                 }
             </div>
             @if (Model.ToList().Count > 0)
@@ -77,29 +76,27 @@
                             <div id="@item.ProyectoId" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <label>Descripción</label>
+                                        <label>Descripción:</label><br/>
                                         @Html.DisplayFor(modelItem => item.proyecto.descripcionProyecto)
-                                        <br />
+                                        <br /><br />
 
-                                        <label>Fecha inicio</label>
+                                        <label>Fecha inicio:</label>
                                         @Html.DisplayFor(modelItem => item.proyecto.fechaInicioProyecto)
-
-                                        <br />
-                                        <label>Fecha fin</label>
+                                        
+                                        <label class="ubicar-derecha">Fecha fin:</label>
                                         @Html.DisplayFor(modelItem => item.proyecto.fechaFinalizacionProyecto)
 
-                                        <br />
-                                        <label>Estado</label>
+                                        <label class="ubicar-derecha">Estado:</label>
                                         @Html.DisplayFor(modelItem => item.proyecto.estadoProyecto)
 
-                                        <br />
-                                        @Html.ActionLink("Detalles", "Details", new { id = item.ProyectoId })
-                                        @if (item.rolUsuario.Equals("administrador"))
-                                        {
-                                            @Html.ActionLink("Editar ", "EditarProyecto", new { id = item.ProyectoId })
-                                            @Html.ActionLink("Eliminar", "EliminarProyecto", new { id = item.ProyectoId })
-                                        }
-
+                                        <div class="panel-acciones">
+                                            <a href="@Url.Action("Details", new { id = item.ProyectoId })"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                            @if (item.rolUsuario.Equals("administrador"))
+                                            {
+                                                <a href="@Url.Action("EditarProyecto", new { id = item.ProyectoId })"><span class="glyphicon glyphicon-pencil"></span></a>
+                                                <a href="@Url.Action("EliminarProyecto", new { id = item.ProyectoId })"><span class="glyphicon glyphicon-trash"></span></a>
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             </div>

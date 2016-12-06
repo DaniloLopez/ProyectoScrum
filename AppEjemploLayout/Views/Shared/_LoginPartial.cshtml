@@ -9,11 +9,13 @@
             <li class="dropdown">
                 <a class="dropdown-toggle" id="menu1" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>
-                    @Session["NombreUsuario"]
+                    @Session["NombreUsuario"] &nbsp;
+
+                    <span class="glyphicon glyphicon-cog">&nbsp;</span>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 
-                    <li>@Html.ActionLink("PERFIL", "InformacionUsuario", "Usuarios", null)</li>
+                    <li>@Html.ActionLink("Perfil", "InformacionUsuario", "Usuarios", null)</li>
 
                     <li role="presentation">
                         @Html.ActionLink("Administrar", "Index", "Manage", routeValues: null, htmlAttributes: new { })

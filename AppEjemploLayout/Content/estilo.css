@@ -9,14 +9,16 @@
 }
 
     .contenido h2 {
-        padding-bottom: 30px;
-        margin-right: 30px;
+        padding-bottom: 70px;
     }
     .contenido input {
         width: 60%;
     }
     .contenido button {
         width: 15%;
+    }
+    .contenido dd {
+        padding-bottom: 30px;
     }
 
     .contenido table{
@@ -74,9 +76,12 @@
 }
 
 .panel-acciones {
-    width: 75%;
-    margin: 20px;
+    margin-top: 20px;
+    padding-left: 85%;
 }
+    .panel-acciones span{
+        padding-left: 20px;
+    }
 
 .panel-busqueda {
     width: 20%;
@@ -85,3 +90,12 @@
     .panel-busqueda input[type=text] {
         float: right;
     }
+
+.ubicar-derecha {
+    padding-left: 10%;
+}
+
+#espacio-izquierda {
+    margin-right:30px;
+    margin-left:10%;
+}
