@@ -25,5 +25,13 @@ namespace AppEjemploLayout.Controllers
         }
         //El método sepuede llamar como a usted se le de la gana
         //El post es mejor cuando usted va a meter info a la base de datos
+
+        [HttpGet]
+        [Route("api/AutoComplete/{texto}")]
+        public IHttpActionResult GetProyectos(string texto)
+        {
+            var consulta = db.Proyectoes.Where(u => u.nombreProyecto.Contains(texto));
+            return Ok(consulta.ToList());
+        }
     }
 }
