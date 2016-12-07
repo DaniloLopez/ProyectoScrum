@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using AppEjemploLayout.Models;
 using AppEjemploLayout.Models.ClasesProyecto;
 using AppEjemploLayout.Models.Proyecto_Usuario;
+using AppEjemploLayout.Models.ViewModel;
 
 namespace AppEjemploLayout.Controllers
 {
@@ -212,11 +213,14 @@ namespace AppEjemploLayout.Controllers
             //SE MIRA SI EL USUARIO QUE ESTA CONSULTANDO LOS INTEGRANTES DEL PROYECTO ES EL ADMINISTRADOR
             //EN CASO DE QUE SEA SE LE DA PERMISO DE EDITAR SINO SOLAMENTE SE MOSTRARA LOS INTEGRANTES
 
-            var consulta = db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(p => p.usuario).ToList();
+            InformacionDeProyecto info = new InformacionDeProyecto();
+            info.proyecto = proyecto;
+            info.equipo= db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(p => p.usuario).ToList();
+            info.productBacklog = null;
 
             
             
-            return View(consulta);
+            return View(info);
         }
         
 

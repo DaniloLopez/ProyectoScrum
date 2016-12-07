@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppEjemploLayout.Models.ClasesProyecto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,6 +13,11 @@ namespace AppEjemploLayout.Models.ClasesHistoriaUsuario
     {        
         public int HistoriaUsuarioId { get; set; }
 
+        public int ProyectoId { get; set; }
+
+        [ForeignKey("ProyectoId")]
+        public Proyecto proyecto { get; set; }
+
         [Required(ErrorMessage = "Por favor ingrese el nombre de la historia de usuario.")]
         [Display(Name = "Nombre *:")]
         public string nombre { get; set; }
@@ -20,7 +26,7 @@ namespace AppEjemploLayout.Models.ClasesHistoriaUsuario
         [Display(Name = "Contexto *:")]
         public string contexto { get; set; }
 
-        [Required(ErrorMessage = "Por favor ingrese a descripción de la historia de usuario.")]
+        [Required(ErrorMessage = "Por favor ingrese la descripción de la historia de usuario.")]
         [Display(Name = "Descripción : ")]
         public string descripcion { get; set; }
 

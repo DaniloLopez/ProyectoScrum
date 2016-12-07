@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AppEjemploLayout.Models.Proyecto_Usuario.ProyectoUsuarioRelacion>
+﻿@model AppEjemploLayout.Models.ViewModel.InformacionDeProyecto
 
 @{
     ViewBag.Title = "UsuariosProyecto";
@@ -17,15 +17,15 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.usuario.correoElectronicoUsuario)
+                @Html.DisplayNameFor(model => model.equipo.First().usuario.correoElectronicoUsuario)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.rolUsuario)
+                @Html.DisplayNameFor(model => model.equipo.First().rolUsuario)
             </th>
             <th></th>
         </tr>
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.equipo)
         {
             <tr>
                 <td>
@@ -42,6 +42,8 @@
             </tr>
         }
 
+
+
     </table>
 </div>
 
@@ -57,8 +59,8 @@
             </div>
             <div class="modal-body">
                 <div class="coso" style="padding: 20px;">
-                    <form class="form-horizontal">
-                        <input id="txt-idProyecto" value="@Model.First().ProyectoId" hidden/>
+                    <form class="form-horizontal" onsubmit="false">
+                        <input id="txt-idProyecto" value="@Model.proyecto.ProyectoId" hidden/>
                         <div class="form-group">
                             <label for="nombre">Nombre:</label>
                             <input class="form-control" id="nombreUsuario" placeholder="Ingrese Nombre">
@@ -72,7 +74,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button id="btn-insertarUsuario" type="submit" class="btn btn-success" >Agregar</button>
+                            <button id="btn-insertarUsuario"  class="btn btn-success" >Agregar</button>
                         </div>
                     </form>
                 </div>

@@ -182,7 +182,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\APIControllers\CrudIntegranteController.cs" />
+    <Compile Include="Controllers\APIControllers\EquipoController.cs" />
     <Compile Include="Controllers\MVCControllers\AccountController.cs" />
     <Compile Include="Controllers\APIControllers\AutoCompleteController.cs" />
     <Compile Include="Controllers\MVCControllers\HomeController.cs" />
@@ -192,9 +192,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612071946065_reinstall.cs" />
-    <Compile Include="Migrations\201612071946065_reinstall.Designer.cs">
-      <DependentUpon>201612071946065_reinstall.cs</DependentUpon>
+    <Compile Include="Migrations\201612072045149_migracionViweModel.cs" />
+    <Compile Include="Migrations\201612072045149_migracionViweModel.Designer.cs">
+      <DependentUpon>201612072045149_migracionViweModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -206,6 +206,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Proyecto_Usuario\ProyectoUsuarioRelacion.cs" />
+    <Compile Include="Models\ViewModel\InformacionDeProyecto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -336,8 +337,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612071946065_reinstall.resx">
-      <DependentUpon>201612071946065_reinstall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612072045149_migracionViweModel.resx">
+      <DependentUpon>201612072045149_migracionViweModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
