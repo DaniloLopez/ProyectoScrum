@@ -6,17 +6,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
 
 namespace AppEjemploLayout.Controllers.APIControllers
 {
-    public class CrudIntegranteController : ApiController
+    public class EquipoController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [System.Web.Mvc.HttpPost]
-        [System.Web.Mvc.Route("api/InsertarIntegrante/{IdProyecto}/{IdUsuario}/{rol}")]
-        public IHttpActionResult InsertarIntegrante(int IdProyecto, int IdUsuario, string rol)
+        [HttpPost]
+        [Route("api/AgregarAEquipo/{IdProyecto}/{IdUsuario}/{rol}")]
+        public IHttpActionResult AgregarAEquipo(int IdProyecto, int IdUsuario, string rol)
         {
             try
             {
@@ -30,15 +29,11 @@ namespace AppEjemploLayout.Controllers.APIControllers
                 db.SaveChanges();
                 return StatusCode(HttpStatusCode.NoContent);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return NotFound();
             }
 
         }
-
-        
-
-
-    }    
+    }
 }

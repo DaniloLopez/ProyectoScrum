@@ -6,7 +6,6 @@
 
         var elementoBoton = document.getElementById("btn-insertarUsuario");
         elementoBoton.onclick = guardarIntegrante(obj.UsuarioId);
-        alert(obj.UsuarioId);
         //var elemId = document.getElementById("txt_id");
         //elemId.value = obj.correoElectronicoUsuario;
     });
@@ -22,18 +21,18 @@ function guardarIntegrante(IdUsuario) {
 
         
         $.ajax({
-            url: '../api/InsertarIntegrante/' + IdProyecto + '/' + IdUsuario + '/' + rol,
+            url: '/api/AgregarAEquipo/' + IdProyecto + '/' + IdUsuario + '/' + rol,
             cache: false,
             type: 'POST',
             contentType: 'application/json; charset=utf-8',
             dataType: "json",
             success: function (data) {
-                location.reload();
-                alert("Bien!");
+                window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto=1';
             }
         }).fail(
         function (xhr, textStatus, err) {
-            alert("Mal :(")
+            alert("mal =(");
+            window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto=1';
         });
     }
     
