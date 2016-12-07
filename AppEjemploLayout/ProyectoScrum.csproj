@@ -192,21 +192,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611181542140_migracion_1.cs" />
-    <Compile Include="Migrations\201611181542140_migracion_1.Designer.cs">
-      <DependentUpon>201611181542140_migracion_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611201537393_d_20.11.2016_10.34.cs" />
-    <Compile Include="Migrations\201611201537393_d_20.11.2016_10.34.Designer.cs">
-      <DependentUpon>201611201537393_d_20.11.2016_10.34.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612070026256_Migration_V1_1.cs" />
-    <Compile Include="Migrations\201612070026256_Migration_V1_1.Designer.cs">
-      <DependentUpon>201612070026256_Migration_V1_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612071934362_7_12_2016_2.34.cs" />
-    <Compile Include="Migrations\201612071934362_7_12_2016_2.34.Designer.cs">
-      <DependentUpon>201612071934362_7_12_2016_2.34.cs</DependentUpon>
+    <Compile Include="Migrations\201612071946065_reinstall.cs" />
+    <Compile Include="Migrations\201612071946065_reinstall.Designer.cs">
+      <DependentUpon>201612071946065_reinstall.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -348,17 +336,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611181542140_migracion_1.resx">
-      <DependentUpon>201611181542140_migracion_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611201537393_d_20.11.2016_10.34.resx">
-      <DependentUpon>201611201537393_d_20.11.2016_10.34.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612070026256_Migration_V1_1.resx">
-      <DependentUpon>201612070026256_Migration_V1_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612071934362_7_12_2016_2.34.resx">
-      <DependentUpon>201612071934362_7_12_2016_2.34.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612071946065_reinstall.resx">
+      <DependentUpon>201612071946065_reinstall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

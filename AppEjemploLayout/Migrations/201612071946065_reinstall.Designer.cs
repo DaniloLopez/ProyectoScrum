@@ -7,13 +7,13 @@ namespace AppEjemploLayout.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class migracion_1 : IMigrationMetadata
+    public sealed partial class reinstall : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migracion_1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(reinstall));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611181542140_migracion_1"; }
+            get { return "201612071946065_reinstall"; }
         }
         
         string IMigrationMetadata.Source

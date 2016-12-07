@@ -3,12 +3,12 @@ namespace AppEjemploLayout.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migracion_1 : DbMigration
+    public partial class reinstall : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Proyectoes",
+                "dbo.Productos",
                 c => new
                     {
                         ProyectoId = c.Int(nullable: false, identity: true),
@@ -21,31 +21,48 @@ namespace AppEjemploLayout.Migrations
                 .PrimaryKey(t => t.ProyectoId);
             
             CreateTable(
+                "dbo.HistoriasUsuario",
+                c => new
+                    {
+                        HistoriaUsuarioId = c.Int(nullable: false, identity: true),
+                        nombre = c.String(nullable: false),
+                        contexto = c.String(nullable: false),
+                        descripcion = c.String(nullable: false),
+                        prioridad = c.Int(nullable: false),
+                        ezfuerzo = c.Int(nullable: false),
+                        Proyecto_ProyectoId = c.Int(),
+                    })
+                .PrimaryKey(t => t.HistoriaUsuarioId)
+                .ForeignKey("dbo.Productos", t => t.Proyecto_ProyectoId)
+                .Index(t => t.Proyecto_ProyectoId);
+            
+            CreateTable(
                 "dbo.ProyectoUsuarioRelacions",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        correoElectronicoUsuario = c.String(maxLength: 128),
+                        UsuarioID = c.Int(nullable: false),
                         ProyectoId = c.Int(nullable: false),
-                        rolUsuario = c.String(),
+                        rolUsuario = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Proyectoes", t => t.ProyectoId, cascadeDelete: true)
-                .ForeignKey("dbo.Usuarios", t => t.correoElectronicoUsuario)
-                .Index(t => t.correoElectronicoUsuario)
+                .ForeignKey("dbo.Productos", t => t.ProyectoId, cascadeDelete: true)
+                .ForeignKey("dbo.Usuarios", t => t.UsuarioID, cascadeDelete: true)
+                .Index(t => t.UsuarioID)
                 .Index(t => t.ProyectoId);
             
             CreateTable(
                 "dbo.Usuarios",
                 c => new
                     {
-                        correoElectronicoUsuario = c.String(nullable: false, maxLength: 128),
+                        UsuarioId = c.Int(nullable: false, identity: true),
+                        correoElectronicoUsuario = c.String(nullable: false),
                         nombresUsuario = c.String(nullable: false),
                         apellidosUsuario = c.String(nullable: false),
                         aliasUsuario = c.String(),
                         contraseñaUsuario = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.correoElectronicoUsuario);
+                .PrimaryKey(t => t.UsuarioId);
             
             CreateTable(
                 "dbo.Registroes",
@@ -137,8 +154,9 @@ namespace AppEjemploLayout.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.ProyectoUsuarioRelacions", "correoElectronicoUsuario", "dbo.Usuarios");
-            DropForeignKey("dbo.ProyectoUsuarioRelacions", "ProyectoId", "dbo.Proyectoes");
+            DropForeignKey("dbo.ProyectoUsuarioRelacions", "UsuarioID", "dbo.Usuarios");
+            DropForeignKey("dbo.ProyectoUsuarioRelacions", "ProyectoId", "dbo.Productos");
+            DropForeignKey("dbo.HistoriasUsuario", "Proyecto_ProyectoId", "dbo.Productos");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
@@ -146,7 +164,8 @@ namespace AppEjemploLayout.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.ProyectoUsuarioRelacions", new[] { "ProyectoId" });
-            DropIndex("dbo.ProyectoUsuarioRelacions", new[] { "correoElectronicoUsuario" });
+            DropIndex("dbo.ProyectoUsuarioRelacions", new[] { "UsuarioID" });
+            DropIndex("dbo.HistoriasUsuario", new[] { "Proyecto_ProyectoId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
@@ -155,7 +174,8 @@ namespace AppEjemploLayout.Migrations
             DropTable("dbo.Registroes");
             DropTable("dbo.Usuarios");
             DropTable("dbo.ProyectoUsuarioRelacions");
-            DropTable("dbo.Proyectoes");
+            DropTable("dbo.HistoriasUsuario");
+            DropTable("dbo.Productos");
         }
     }
 }

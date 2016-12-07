@@ -8,7 +8,7 @@ using System.Web;
 
 namespace AppEjemploLayout.Models.ClasesProyecto
 {
-    [Table ("Productos")]
+    [Table ("Proyectos")]
     public class Proyecto
     {
         public int ProyectoId { get; set; }
