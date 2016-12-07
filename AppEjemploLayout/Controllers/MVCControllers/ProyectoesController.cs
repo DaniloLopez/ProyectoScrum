@@ -218,11 +218,7 @@ namespace AppEjemploLayout.Controllers
             
             return View(consulta);
         }
-
-        public ActionResult EliminarIntegrante(int? id)
-        {
-            return View();
-        }
+        
 
         public ActionResult AgregarIntegrante(int? id)
         {
@@ -238,6 +234,23 @@ namespace AppEjemploLayout.Controllers
             ViewBag.ID = id;
             return View();//debe enviarle a la vista el parametro id que tiene el id del proyecto al que se va a agregar el integrnate
         }
+
+
+        [System.Web.Mvc.Route("api/InsertarIntegrante/{IdUsuario}")]
+        public ActionResult EliminarIntegrante(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ProyectoUsuarioRelacion integrante = db.ProyectoUsuario.Find(id);
+            if (integrante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(integrante);
+        }
+
 
         protected override void Dispose(bool disposing)
         {

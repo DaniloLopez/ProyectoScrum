@@ -30,11 +30,10 @@ namespace AppEjemploLayout
                       "~/Scripts/jquery.magnific-popup.js", "~/Scripts/jquery-2.1.4.min.js",
                       "~/Scripts/move-top.js", "~/Scripts/smoothbox.jquery2.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/autocompletado").Include(
-                "~/Scripts/jquery.easy-autocomplete.min.js",
-                "~/Scripts/ScriptsProyecto/ManejoEventos.js"));
+            bundles.Add(new ScriptBundle("~/scripts/autocompletado").Include(
+                "~/Scripts/jquery.easy-autocomplete.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/eventosProyecto").Include(
+            bundles.Add(new ScriptBundle("~/scripts/eventosProyecto").Include(
                 "~/Scripts/ScriptsProyecto/ManejoEventos.js"));
 
             bundles.Add(new StyleBundle("~/Content/autocompletado").Include(

@@ -36,8 +36,9 @@
                 @foreach (var item in Model)
             {
                     <tr>
-                            string tipo = "";
+                            
                         @{
+                            string tipo = "";
                             if (item.proyecto.estadoProyecto.CompareTo("abierto") == 0)
                             {
                                 tipo = "panel-info";

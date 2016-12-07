@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using AppEjemploLayout.Models.ClasesUsuario;
 using AppEjemploLayout.Models.ClasesProyecto;
+using System.ComponentModel.DataAnnotations;
 
 namespace AppEjemploLayout.Models.Proyecto_Usuario
 {
@@ -21,6 +22,8 @@ namespace AppEjemploLayout.Models.Proyecto_Usuario
         [ForeignKey("ProyectoId")]
         public Proyecto proyecto { get; set; }
 
+        [Required]
+        [Display(Name = "Rol de usuario")]
         public string rolUsuario { get; set; }        
     }
 }

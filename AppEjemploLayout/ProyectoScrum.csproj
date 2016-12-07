@@ -182,12 +182,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AutoCompleteController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProyectoesController.cs" />
-    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\APIControllers\CrudIntegranteController.cs" />
+    <Compile Include="Controllers\MVCControllers\AccountController.cs" />
+    <Compile Include="Controllers\APIControllers\AutoCompleteController.cs" />
+    <Compile Include="Controllers\MVCControllers\HomeController.cs" />
+    <Compile Include="Controllers\MVCControllers\ManageController.cs" />
+    <Compile Include="Controllers\MVCControllers\ProyectoesController.cs" />
+    <Compile Include="Controllers\MVCControllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +203,10 @@
     <Compile Include="Migrations\201612070026256_Migration_V1_1.cs" />
     <Compile Include="Migrations\201612070026256_Migration_V1_1.Designer.cs">
       <DependentUpon>201612070026256_Migration_V1_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612071934362_7_12_2016_2.34.cs" />
+    <Compile Include="Migrations\201612071934362_7_12_2016_2.34.Designer.cs">
+      <DependentUpon>201612071934362_7_12_2016_2.34.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -351,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612070026256_Migration_V1_1.resx">
       <DependentUpon>201612070026256_Migration_V1_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612071934362_7_12_2016_2.34.resx">
+      <DependentUpon>201612071934362_7_12_2016_2.34.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
