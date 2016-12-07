@@ -182,12 +182,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Migrations\Controllers\AccountController.cs" />
-    <Compile Include="Migrations\Controllers\AutoCompleteController.cs" />
-    <Compile Include="Migrations\Controllers\HomeController.cs" />
-    <Compile Include="Migrations\Controllers\ManageController.cs" />
-    <Compile Include="Migrations\Controllers\ProyectoesController.cs" />
-    <Compile Include="Migrations\Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AutoCompleteController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProyectoesController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201611201537393_d_20.11.2016_10.34.cs" />
     <Compile Include="Migrations\201611201537393_d_20.11.2016_10.34.Designer.cs">
       <DependentUpon>201611201537393_d_20.11.2016_10.34.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612070026256_Migration_V1_1.cs" />
+    <Compile Include="Migrations\201612070026256_Migration_V1_1.Designer.cs">
+      <DependentUpon>201612070026256_Migration_V1_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -324,6 +328,8 @@
     <Content Include="Views\Proyectoes\ListaUsuarios.cshtml" />
     <Content Include="Views\Usuarios\RegistrarUsuario.cshtml" />
     <Content Include="Views\Proyectoes\AgregarIntegrante.cshtml" />
+    <Content Include="Views\Proyectoes\EquipoDesarrollo.cshtml" />
+    <Content Include="Views\Proyectoes\UsuariosProyecto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611201537393_d_20.11.2016_10.34.resx">
       <DependentUpon>201611201537393_d_20.11.2016_10.34.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612070026256_Migration_V1_1.resx">
+      <DependentUpon>201612070026256_Migration_V1_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

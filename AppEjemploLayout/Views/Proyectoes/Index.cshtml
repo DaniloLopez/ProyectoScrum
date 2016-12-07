@@ -13,19 +13,13 @@
     <div class="container">
         <div class="form-group row">
             <div class="col-md-2">
-                <a href="@Url.Action("CrearProyecto")" class="btn btn-success" title="Buscar"><h5><span class="glyphicon glyphicon-plus" id="texto-derecha"></span></h5></a>
+                <a href="@Url.Action("CrearProyecto")" class="btn btn-success" title="Buscar">
+                <h5><span class="glyphicon glyphicon-plus" id="texto-derecha"></span></h5></a>
                 @if (Model.ToList().Count > 0)
                 {
                     <a class="btn btn-danger" title="Buscar"><h5><span class="glyphicon glyphicon-minus" id="texto-derecha"></span></h5></a>
                 }
-            </div>
-            @if (Model.ToList().Count > 0)
-            {
-            <div>
-                <input autocomplete="on" alt="filtrar" name="filtrarProyectos" class="btn btn-default" placeholder="Buscar" />
-                <a class="btn btn-primary" title="Buscar"><h4><span class="glyphicon glyphicon-search"></span></h4></a>
-            </div>
-            }
+            </div>            
         </div>
     </div>
     <br />
@@ -42,8 +36,8 @@
                 @foreach (var item in Model)
             {
                     <tr>
-                        @{
                             string tipo = "";
+                        @{
                             if (item.proyecto.estadoProyecto.CompareTo("abierto") == 0)
                             {
                                 tipo = "panel-info";
@@ -68,35 +62,32 @@
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" href="#@item.ProyectoId" aria-expanded="true">
                                         @Html.DisplayFor(modelItem => item.proyecto.nombreProyecto)
-                                    </a>
-                                    <a href="@Url.Action("Details", new { id = item.ProyectoId })"><span class="glyphicon glyphicon-folder-open" id="texto-derecha"></span></a>
+                                    </a>                                    
+
+                                    <div id="texto-derecha">
+                                        <a href="@Url.Action("UsuariosProyecto", "Proyectoes", new { IdProyecto = item.ProyectoId})">
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                        </a>
+
+
+                                        @if (item.rolUsuario.Equals("administrador"))
+                                        {
+                                            <a href="@Url.Action("EditarProyecto", new { id = item.ProyectoId })">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                            </a>
+                                            <a href="@Url.Action("EliminarProyecto", new { id = item.ProyectoId })">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                            </a>
+                                        }
+                                    </div>
                                 </h4>
                             </div>
 
                             <div id="@item.ProyectoId" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <label>Descripción:</label><br/>
-                                        @Html.DisplayFor(modelItem => item.proyecto.descripcionProyecto)
-                                        <br /><br />
-
-                                        <label>Fecha inicio:</label>
-                                        @Html.DisplayFor(modelItem => item.proyecto.fechaInicioProyecto)
-                                        
-                                        <label class="ubicar-derecha">Fecha fin:</label>
-                                        @Html.DisplayFor(modelItem => item.proyecto.fechaFinalizacionProyecto)
-
-                                        <label class="ubicar-derecha">Estado:</label>
-                                        @Html.DisplayFor(modelItem => item.proyecto.estadoProyecto)
-
-                                        <div class="panel-acciones">
-                                            <a href="@Url.Action("Details", new { id = item.ProyectoId })"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                            @if (item.rolUsuario.Equals("administrador"))
-                                            {
-                                                <a href="@Url.Action("EditarProyecto", new { id = item.ProyectoId })"><span class="glyphicon glyphicon-pencil"></span></a>
-                                                <a href="@Url.Action("EliminarProyecto", new { id = item.ProyectoId })"><span class="glyphicon glyphicon-trash"></span></a>
-                                            }
-                                        </div>
+                                        <!--<label>Descripción:</label><br/>-->
+                                        @Html.DisplayFor(modelItem => item.proyecto.descripcionProyecto)                                                                                
                                     </div>
                                 </div>
                             </div>

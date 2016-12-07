@@ -6,58 +6,58 @@
 }
 <br /><br />
 
-
-<div class="contenido">
-    <div class="text-center">
-        <h2>@Html.DisplayFor(model => model.nombreProyecto) - Detalles del proyecto</h2>
-    </div>
-
-    <div class="table-responsive">
+    <div class="contenido">
+        <div class="text-center">
+            <h2>Proyecto @Html.DisplayFor(model => model.nombreProyecto) - Detalles</h2>
+        </div>
         
-        <dl class="dl-horizontal">
-            <dt>
-                <label>Nombre del proyecto:</label>
-            </dt>
+        <br />
+        <div class="table-responsive">
 
-            <dd>
-                @Html.DisplayFor(model => model.nombreProyecto)
-            </dd>
-            
-            <dt>
-                <label>Descripción:</label>
-            </dt>
+            <dl class="dl-horizontal">
+                <dt>
+                    <label>Nombre del proyecto:</label>
+                </dt>
 
-            <dd class="text-justify">
-                @Html.DisplayFor(model => model.descripcionProyecto)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.nombreProyecto)
+                </dd>
 
-            <dt>
-                <label>Fecha de inicio:</label>
-            </dt>
+                <dt>
+                    <label>Descripción:</label>
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.fechaInicioProyecto)
-            </dd>
+                <dd class="text-justify">
+                    @Html.DisplayFor(model => model.descripcionProyecto)
+                </dd>
 
-            <dt>
-                <label>Fecha de finalización:</label>
-            </dt>
+                <dt>
+                    <label>Fecha de inicio:</label>
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.fechaFinalizacionProyecto)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.fechaInicioProyecto)
+                </dd>
 
-            <dt>
-                <label>Estado:</label>
-            </dt>
+                <dt>
+                    <label>Fecha de finalización:</label>
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.estadoProyecto)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.fechaFinalizacionProyecto)
+                </dd>
 
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Volver", "Index")
-    </p>
+                <dt>
+                    <label>Estado:</label>
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.estadoProyecto)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Volver", "Index")
+        </p>
     </div>

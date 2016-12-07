@@ -12,14 +12,15 @@ namespace AppEjemploLayout.Models.Proyecto_Usuario
     {
         public int Id { get; set; }
 
-        public string correoElectronicoUsuario { get; set; }
-        [ForeignKey("correoElectronicoUsuario")]
+        public int UsuarioID { get; set; }
+
         public Usuario usuario { get; set; }
 
         public int ProyectoId { get; set; }
+
         [ForeignKey("ProyectoId")]
         public Proyecto proyecto { get; set; }
 
-        public string rolUsuario { get; set; }
+        public string rolUsuario { get; set; }        
     }
 }

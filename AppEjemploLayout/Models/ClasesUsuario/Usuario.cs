@@ -1,4 +1,5 @@
 ﻿using AppEjemploLayout.Models.ClasesProyecto;
+using AppEjemploLayout.Models.Proyecto_Usuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +11,8 @@ namespace AppEjemploLayout.Models.ClasesUsuario
 {
     public class Usuario
     {
-        [Key]
+        public int UsuarioId { get; set; }
+
         [EmailAddress]
         [Required]
         [Display(Name = "Correo Electronico*")]
@@ -32,5 +34,7 @@ namespace AppEjemploLayout.Models.ClasesUsuario
         [Display(Name = "Contraseña")]
         public string contraseñaUsuario { get; set; }
 
+
+        public virtual List<ProyectoUsuarioRelacion> Proyectos { get; set; }
     }
 }

@@ -76,9 +76,9 @@
                             <div class="col-md-10">
                                 @{
                                     List<SelectListItem> lista = new List<SelectListItem>();
-                                    lista.Add(new SelectListItem { Text = "ABIERTO", Value = "abierto" });
-                                    lista.Add(new SelectListItem { Text = "CANCELADO", Value = "cancelado" });
-                                    lista.Add(new SelectListItem { Text = "FINALIZADO", Value = "finalizado" });
+                                    lista.Add(new SelectListItem { Text = "Abierto", Value = "abierto" });
+                                    lista.Add(new SelectListItem { Text = "Cancelado", Value = "cancelado" });
+                                    lista.Add(new SelectListItem { Text = "Finalizado", Value = "finalizado" });
                                 }
                                 @Html.DropDownListFor(model => model.estadoProyecto, lista, new { htmlAttributes = new { @class = "inputs-editar" } })
                             </div>

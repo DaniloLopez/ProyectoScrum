@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AppEjemploLayout.Models.ClasesUsuario.Usuario>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EquipoDesarrollo</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.correoElectronicoUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombresUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellidosUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aliasUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contraseñaUsuario)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.correoElectronicoUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombresUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellidosUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aliasUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contraseñaUsuario)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.UsuarioId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.UsuarioId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UsuarioId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

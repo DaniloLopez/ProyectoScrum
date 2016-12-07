@@ -51,9 +51,10 @@ namespace AppEjemploLayout.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (db.Usuarios.Find(registro.correoElectronicoUsuario)==null)
+                var usuarioExistente = db.Usuarios.Where(u => u.nombresUsuario.Equals(registro.nombresUsuario)).FirstOrDefault();
+                if (usuarioExistente==null)
                 {
-                    Usuario usuario = new Usuario();
+                    Usuario usuario = new Usuario();                    
                     usuario.correoElectronicoUsuario = registro.correoElectronicoUsuario;
                     usuario.nombresUsuario = registro.nombresUsuario;
                     usuario.apellidosUsuario = registro.apellidosUsuario;
@@ -124,7 +125,7 @@ namespace AppEjemploLayout.Controllers
         {
             try
             {
-                Usuario usuario = db.Usuarios.Find(datos.correoSesion);
+                Usuario usuario = db.Usuarios.Where( u=> u.correoElectronicoUsuario==datos.correoSesion).FirstOrDefault();
                 string con = Encrypt(datos.contraseñaUsuario);
                 if (usuario != null && usuario.contraseñaUsuario.Equals(con))
                 {
