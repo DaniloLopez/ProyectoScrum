@@ -88,7 +88,15 @@
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <!--<label>Descripción:</label><br/>-->
-                                        @Html.DisplayFor(modelItem => item.proyecto.descripcionProyecto)                                                                                
+                                        <label>Descripción:</label><br />
+                                        @Html.DisplayFor(modelItem => item.proyecto.descripcionProyecto)
+                                        <br /><br />
+                                        <label>Fecha inicio:</label>
+                                        @Html.DisplayFor(modelItem => item.proyecto.fechaInicioProyecto)
+                                        <label class="ubicar-derecha">Fecha fin:</label>
+                                        @Html.DisplayFor(modelItem => item.proyecto.fechaFinalizacionProyecto)
+                                        <label class="ubicar-derecha">Estado:</label>
+                                        @Html.DisplayFor(modelItem => item.proyecto.estadoProyecto)                                                                   
                                     </div>
                                 </div>
                             </div>
