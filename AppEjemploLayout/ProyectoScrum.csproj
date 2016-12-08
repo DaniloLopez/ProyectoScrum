@@ -197,10 +197,16 @@
     <Compile Include="Migrations\201612072045149_migracionViweModel.Designer.cs">
       <DependentUpon>201612072045149_migracionViweModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612080053586_migracion_Sprints.cs" />
+    <Compile Include="Migrations\201612080053586_migracion_Sprints.Designer.cs">
+      <DependentUpon>201612080053586_migracion_Sprints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClasesHistoriaUsuario\HistoriaUsuario.cs" />
     <Compile Include="Models\ClasesProyecto\Proyecto.cs" />
+    <Compile Include="Models\ClasesSprints\Sprint.cs" />
+    <Compile Include="Models\ClasesSprints\TareaSprint.cs" />
     <Compile Include="Models\ClasesUsuario\InicioSesion.cs" />
     <Compile Include="Models\ClasesUsuario\Registro.cs" />
     <Compile Include="Models\ClasesUsuario\Usuario.cs" />
@@ -344,6 +350,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612072045149_migracionViweModel.resx">
       <DependentUpon>201612072045149_migracionViweModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612080053586_migracion_Sprints.resx">
+      <DependentUpon>201612080053586_migracion_Sprints.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

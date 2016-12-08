@@ -35,9 +35,10 @@ namespace AppEjemploLayout.Models
         public System.Data.Entity.DbSet<AppEjemploLayout.Models.ClasesProyecto.Proyecto> Proyectoes { get; set; }
         
         public System.Data.Entity.DbSet<AppEjemploLayout.Models.Proyecto_Usuario.ProyectoUsuarioRelacion> ProyectoUsuario { get; set; }
-
-        public System.Data.Entity.DbSet<AppEjemploLayout.Models.ClasesUsuario.Registro> Registroes { get; set; }
-
+        
         public System.Data.Entity.DbSet<AppEjemploLayout.Models.ClasesHistoriaUsuario.HistoriaUsuario> HistoriaUsuarios { get; set; }
+
+        public System.Data.Entity.DbSet<AppEjemploLayout.Models.ClasesSprints.Sprint> Sprint { get; set; }
+        public System.Data.Entity.DbSet<AppEjemploLayout.Models.ClasesSprints.TareaSprint> TareaSprint { get; set; }
     }
 }
