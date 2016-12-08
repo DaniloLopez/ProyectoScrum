@@ -12,13 +12,9 @@
 
     <div class="container">
         <div class="form-group row">
-            <div class="col-md-2">
-                <a href="@Url.Action("CrearProyecto")" class="btn btn-success" title="Buscar">
+            <div class="col-md-offset-9 col-md-2">
+                <a href="@Url.Action("CrearProyecto")" class="btn btn-success" title="Agregar proyecto">
                 <h5><span class="glyphicon glyphicon-plus" id="texto-derecha"></span></h5></a>
-                @if (Model.ToList().Count > 0)
-                {
-                    <a class="btn btn-danger" title="Buscar"><h5><span class="glyphicon glyphicon-minus" id="texto-derecha"></span></h5></a>
-                }
             </div>            
         </div>
     </div>
@@ -67,18 +63,19 @@
 
                                     <div id="texto-derecha">
                                         <a href="@Url.Action("UsuariosProyecto", "Proyectoes", new { IdProyecto = item.ProyectoId})">
-                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                            <span class="glyphicon glyphicon-eye-open">&nbsp;|&nbsp;</span>
                                         </a>
-
 
                                         @if (item.rolUsuario.Equals("administrador"))
                                         {
                                             <a href="@Url.Action("EditarProyecto", new { id = item.ProyectoId })">
-                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                <span class="glyphicon glyphicon-pencil">&nbsp;|&nbsp;</span>
                                             </a>
+                                            
                                             <a href="@Url.Action("EliminarProyecto", new { id = item.ProyectoId })">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
+   
+                                                   <span class="glyphicon glyphicon-trash"></span>
+                                            </a> 
                                         }
                                     </div>
                                 </h4>
