@@ -1,5 +1,6 @@
 ﻿using AppEjemploLayout.Models.ClasesHistoriaUsuario;
 using AppEjemploLayout.Models.ClasesProyecto;
+using AppEjemploLayout.Models.ClasesSprints;
 using AppEjemploLayout.Models.Proyecto_Usuario;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace AppEjemploLayout.Models.ViewModel
         public List<ProyectoUsuarioRelacion> equipo { get; set; }
 
         public List<HistoriaUsuario> productBacklog { get; set; }
+
+        public List<Sprint> sprints { get; set; } 
 
     }
 }
