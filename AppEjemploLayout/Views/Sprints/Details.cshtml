@@ -6,13 +6,17 @@
 }
 
 
+
+
 <div class="contenido col-md-offset-1">
     <div class="text-center">
-        @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
+        <h2>Sprint @Html.DisplayFor(m => Model.sprint.SprintId))</h2>
     </div>
 
+    
+    <a href="" class="btn btn-success">Tablero de tareas</a>
+    
     <!-- Trigger the modal with a button -->
-
     <table class="table">
         <tr>
             <th>
@@ -53,6 +57,8 @@
 </div>
 
 
+
+
 <div class="contenido col-md-offset-1">
     <div class="text-center">
         @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
@@ -60,6 +66,7 @@
 
     <!-- Trigger the modal with a button -->
 
+    <a href="../../TareaSprints/Create?idSprint=@Model.sprint.SprintId" class="btn btn-success">Nueva tarea</a>
     <table class="table">
         <tr>
             <th>
