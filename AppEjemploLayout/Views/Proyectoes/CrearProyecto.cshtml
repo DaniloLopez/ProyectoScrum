@@ -4,60 +4,61 @@
     ViewBag.Title = "CrearProyecto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="contenido">
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        <br /><br />
-        <div class="form-horizontal">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-offset-4"><h2>Nuevo proyecto</h2></div>
-                </div>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    <label class="col-md-3">Nombre del proyecto:</label>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.nombreProyecto, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.nombreProyecto, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+<h2>Proyecto nuevo</h2>
 
-                <div class="form-group">
-                    <label class="col-md-3">Descripción:</label>
-                    <div class="col-md-9">
-                        @Html.TextAreaFor(model => model.descripcionProyecto, 4, 65, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.descripcionProyecto, "", new { @class = "text-danger" })
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="col-md-3">Fecha inicio:</label>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.fechaInicioProyecto, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.fechaInicioProyecto, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-3">Fecha fin:</label>
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.fechaFinalizacionProyecto, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.fechaFinalizacionProyecto, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <br /><br />
-                <div class="form-group">
-                    <div class="col-md-offset-1 col-md-10">                        
-                        <a href="Index" type="button" class="btn btn-danger btn-lg col-md-offset-2 col-md-3">Cancelar</a>
-                        <button type="submit" value="CrearProyecto" class="btn btn-success col-md-offset-1 btn-lg col-md-3">Guardar</button>
-                    </div>
-                </div>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.nombreProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nombreProyecto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nombreProyecto, "", new { @class = "text-danger" })
             </div>
         </div>
-    }
-</div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.descripcionProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.descripcionProyecto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.descripcionProyecto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fechaInicioProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fechaInicioProyecto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fechaInicioProyecto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fechaFinalizacionProyecto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fechaFinalizacionProyecto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fechaFinalizacionProyecto, "", new { @class = "text-danger" })
+            </div>
+        </div>       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" value="CrearProyecto" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+
+                <a href="Index" type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-remove-circle"></span> Cancelar</a>
+
+            </div>
+        </div>
+        
+       
+    </div>
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
