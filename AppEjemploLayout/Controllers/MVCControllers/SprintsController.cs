@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using AppEjemploLayout.Models;
 using AppEjemploLayout.Models.ClasesSprints;
+using AppEjemploLayout.Models.ViewModel;
 
 namespace AppEjemploLayout.Controllers.MVCControllers
 {
@@ -28,7 +29,13 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             {
                 return HttpNotFound();
             }
-            return View(sprint);
+
+            InformacionSprint info = new InformacionSprint();
+            info.sprint = sprint;
+            info.tareas = db.TareaSprint.Where(p=>p.SprintId==id).ToList();
+            info.historiasUsuario = db.HistoriaUsuarios.Where(p => p.SprintId == id).ToList();
+
+            return View(info);
         }
 
         // GET: Sprints/Create
@@ -54,7 +61,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             {
                 db.Sprint.Add(sprint);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("UsuariosProyecto", "Proyectoes", new { IdProyecto = sprint.ProyectoId });
             }
 
             ViewBag.ProyectoId = new SelectList(db.Proyectoes, "ProyectoId", "nombreProyecto", sprint.ProyectoId);

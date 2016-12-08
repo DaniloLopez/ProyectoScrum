@@ -212,14 +212,14 @@ namespace AppEjemploLayout.Controllers
 
             //SE MIRA SI EL USUARIO QUE ESTA CONSULTANDO LOS INTEGRANTES DEL PROYECTO ES EL ADMINISTRADOR
             //EN CASO DE QUE SEA SE LE DA PERMISO DE EDITAR SINO SOLAMENTE SE MOSTRARA LOS INTEGRANTES
-
+            
             InformacionDeProyecto info = new InformacionDeProyecto();
             info.proyecto = proyecto;
             info.equipo= db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(p => p.usuario).ToList();
             info.productBacklog = db.HistoriaUsuarios.Where(p => p.ProyectoId== IdProyecto).OrderBy(c=>c.prioridad).ToList();
             info.sprints = db.Sprint.Where(p => p.ProyectoId == IdProyecto).ToList();
-            
-            
+
+            ViewBag.rol = db.ProyectoUsuario.Where(p=>p.ProyectoId==IdProyecto && p.UsuarioID==(int)Session["UsuarioId"]);
             return View(info);
         }
         

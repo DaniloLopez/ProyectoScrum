@@ -20,7 +20,7 @@ namespace AppEjemploLayout.Models.ClasesSprints
         [ForeignKey("SprintId")]
         public Sprint sprint { get; set; }
 
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
 
         [ForeignKey("UsuarioId")]
         public Usuario usuario { get; set; }

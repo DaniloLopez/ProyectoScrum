@@ -1,4 +1,5 @@
 ﻿using AppEjemploLayout.Models.ClasesProyecto;
+using AppEjemploLayout.Models.ClasesSprints;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,6 +13,11 @@ namespace AppEjemploLayout.Models.ClasesHistoriaUsuario
     public class HistoriaUsuario
     {        
         public int HistoriaUsuarioId { get; set; }
+
+        public int? SprintId { get; set; }
+
+        [ForeignKey("SprintId")]
+        public Sprint sprint { get; set; }
 
         public int ProyectoId { get; set; }
 
