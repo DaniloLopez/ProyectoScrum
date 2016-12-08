@@ -132,6 +132,7 @@ namespace AppEjemploLayout.Controllers
                 {
                     Session["Usuario"] = true;
                     Session["NombreUsuario"] = datos.correoSesion;
+                    Session["UsuarioId"] = usuario.UsuarioId;
                     return RedirectToAction("Index", "Proyectoes", null);
                 }
                 else
