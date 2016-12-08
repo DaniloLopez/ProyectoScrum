@@ -182,7 +182,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\APIControllers\CrudTareasController.cs" />
     <Compile Include="Controllers\APIControllers\EquipoController.cs" />
+    <Compile Include="Controllers\APIControllers\TareasController.cs" />
     <Compile Include="Controllers\HistoriaUsuariosController.cs" />
     <Compile Include="Controllers\MVCControllers\AccountController.cs" />
     <Compile Include="Controllers\APIControllers\AutoCompleteController.cs" />
@@ -225,9 +227,13 @@
     <Content Include="Content\estilo_login.css" />
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\flickerplate.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\popuo-box.css" />
     <Content Include="Content\smoothbox.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\Tareas\Tareas.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -281,6 +287,11 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ScriptsProyecto\ManejoEventos.js" />
     <Content Include="Scripts\smoothbox.jquery2.js" />
+    <Content Include="Scripts\Tareas\AsignarTareas.js" />
+    <Content Include="Scripts\Tareas\crudTarea.js" />
+    <Content Include="Scripts\Tareas\eventos-tarea.js" />
+    <Content Include="Scripts\Tareas\jquery-ui.min.js" />
+    <Content Include="Scripts\Tareas\WebClient.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

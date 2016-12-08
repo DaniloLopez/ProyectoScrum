@@ -16,6 +16,16 @@ namespace AppEjemploLayout.Controllers.MVCControllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
  
+        public ActionResult Index()
+        {
+            var sprint = db.Sprint.Include(s => s.proyecto);
+            return View(sprint.ToList());
+        }
+
+        public ActionResult AsignarTareas()
+        {
+            return View();
+        }
 
         // GET: Sprints/Details/5
         public ActionResult Details(int? id)

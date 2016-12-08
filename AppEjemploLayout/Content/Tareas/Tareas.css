@@ -1,0 +1,11 @@
+﻿.bx-tarea {
+    border: 1px solid #46494C;
+    margin: 5px 0px 5px 0px;
+    min-height: 40px;
+    padding: 5px;
+    background-color: #FFF;
+}
+
+.titleContent {
+    padding: 10px;
+}

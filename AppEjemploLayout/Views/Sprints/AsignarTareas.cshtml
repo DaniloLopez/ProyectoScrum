@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "AsignarTareas";
+}
+
+<div class="container">
+    <div class="row text-center titleContent">
+        <h3>Asigna tus tareas!</h3>
+        <h3>Sprint: <span id="span-sprint"></span></h3>
+    </div>
+
+    <div class="row main-row">
+        
+        <div id="tbl" class="col-lg-10 col-lg-md-10 col-sm-10">
+            <table id="tbl_Agenda" class="differentTable table  table-condensed table-bordered">
+                <thead>
+                    <tr id="tblhead">
+                        <th>Iniciada</th>
+                        <th>En Desarrollo</th>
+                        <th>Pendiente de Pruebas</th>
+                        <th>Terminada</th>
+                    </tr>
+                </thead>
+                <tbody id="tblbody">
+                    
+                </tbody>
+            </table>
+        </div> <!--Table-->        
+        <div class="col-lg-2 col-md-2 col-sm-2">
+
+            <div class="affix">
+                <div id="menu2" class="tab-pane" fade>
+                    <h4>Tareas por asignar</h4>
+                    <ul id="ul-tareasAsignar" class="list-group"></ul>
+                </div>
+            </div>
+
+        </div> <!--Sidebar-->
+    </div> <!--End Row-->
+</div>
+
+@Scripts.Render("~/scripts/jqueryUI");
+@Scripts.Render("~/scripts/ctrl-asignarTareas");

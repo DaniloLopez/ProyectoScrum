@@ -16,6 +16,8 @@
     <!-- //for-mobile-apps -->
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/autocompletado")
+    @Styles.Render("~/Content/AsingarTareas")
+    @Styles.Render("~/Content/jqueryUI")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/bootstrap")
 </head>
@@ -30,7 +32,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="logo">
-                        <h1>@Html.ActionLink("Scrum + +", "Index", "Home","", new { @class = "navbar-brand" })</h1>
+                        <h1>@Html.ActionLink("Scrum + +", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</h1>
                     </div>
                 </div>
 
@@ -39,12 +41,16 @@
                     <nav>
                         <ul class="nav navbar-nav">
                             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                            <li>@Html.ActionLink("INICIO", "Index", "Home", "", new { @class = "hvr-sweep-to-bottom" })</li>
+                            <li>@Html.ActionLink("INICIO", "Index", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
                             @if (Session["NombreUsuario"] != null)
                             {
-                                <li>@Html.ActionLink("PROYECTOS", "Index", "Proyectoes","", new { @class = "hvr-sweep-to-bottom" })</li>
+                                <li>@Html.ActionLink("PROYECTOS", "Index", "Proyectoes", new { @class = "hvr-sweep-to-bottom" })</li>
                             }
-                            <li>@Html.ActionLink("SOPORTE", "Contact", "Home", "", new { @class = "hvr-sweep-to-bottom" })</li>
+                            else
+                            {
+                                <li>@Html.ActionLink("DESCUBRIR", "About", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
+                            }
+                            <li>@Html.ActionLink("SOPORTE", "Contact", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
                             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                             <li>@Html.Partial("_LoginPartial")</li>

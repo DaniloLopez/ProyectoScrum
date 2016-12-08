@@ -5,7 +5,7 @@ namespace AppEjemploLayout
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
+
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
@@ -36,15 +36,34 @@ namespace AppEjemploLayout
             bundles.Add(new ScriptBundle("~/scripts/eventosProyecto").Include(
                 "~/Scripts/ScriptsProyecto/ManejoEventos.js"));
 
+            bundles.Add(new ScriptBundle("~/scripts/ctrl-asignarTareas").Include(
+                "~/Scripts/Tareas/eventos-tarea.js",
+                "~/Scripts/Tareas/AsignarTareas.js",
+                "~/Scripts/Tareas/WebClient.js",
+                "~/Scripts/Tareas/crudTarea.js"));
+
             bundles.Add(new StyleBundle("~/Content/autocompletado").Include(
                 "~/Content/easy-autocomplete.min.css",
                 "~/Content/easy-autocomplete.themes.min.css"
                 ));
+            bundles.Add(new StyleBundle("~/Content/AsingarTareas").Include(
+                "~/Content/Tareas/tareas.css"
+                ));
+
+            bundles.Add(new StyleBundle("~/Content/jqueryUI").Include(
+                "~/Content/jquery-ui.min.css",
+                "~/Content/jquery-ui.structure.css",
+                "~/Content/jquery-ui.theme.min.css"
+                ));
+            bundles.Add(new ScriptBundle("~/scripts/jqueryUI").Include(
+                "~/Scripts/Tareas/jquery-ui.min.js"));
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css", "~/Content/chocolat.css",
                       "~/Content/estilo_login.css", "~/Content/flexslider.css", "~/Content/flickerplate.css",
-                      "~/Content/popuo-box.css", "~/Content/smoothbox.css", "~/Content/style.css", "~/Content/estilo.css"));
+                      "~/Content/popuo-box.css", "~/Content/smoothbox.css", "~/Content/style.css", "~/Content/estilo.css"
+                      ));
             BundleTable.EnableOptimizations = true;
         }
     }
