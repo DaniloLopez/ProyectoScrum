@@ -18,7 +18,7 @@ function guardarIntegrante(IdUsuario) {
         var IdProyecto = document.getElementById("txt-idProyecto").value;
         var elem_rol = document.getElementById("cmb-rol");
         var rol = elem_rol.options[elem_rol.selectedIndex].text;
-
+        var urlnew = '../Proyectoes/UsuariosProyecto?IdProyecto=' + IdProyecto;
         
         $.ajax({
             url: '/api/AgregarAEquipo/' + IdProyecto + '/' + IdUsuario + '/' + rol,
@@ -27,12 +27,12 @@ function guardarIntegrante(IdUsuario) {
             contentType: 'application/json; charset=utf-8',
             dataType: "json",
             success: function (data) {
-                window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto='+IdProyecto;
+                window.location.href = urlnew;
             }
         }).fail(
         function (xhr, textStatus, err) {
             alert("mal =(");
-            window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto'=IdProyecto;
+            window.location.href = urlnew;
         });
     }
     
