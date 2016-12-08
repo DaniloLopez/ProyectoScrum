@@ -27,7 +27,10 @@ namespace AppEjemploLayout.Controllers
         // GET: Usuarios/Details/5
         public ActionResult InformacionUsuario()
         {
-            
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             Usuario usuario = db.Usuarios.Find((int)Session["UsuarioId"]);
             if (usuario == null)
             {
@@ -152,11 +155,11 @@ namespace AppEjemploLayout.Controllers
         // GET: Usuarios/Edit/5
         public ActionResult EditarUsuario()
         {
-            if (Session["NombreUsuario"]!=null)
+            if (Session["Usuario"] == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("InicioSesion", "Usuarios", null);
             }
-            Usuario usuario = db.Usuarios.Find((string)Session["NombreUsuario"]);
+            Usuario usuario = db.Usuarios.Find((int)Session["UsuarioId"]);
             if (usuario == null)
             {
                 return HttpNotFound();
@@ -171,6 +174,10 @@ namespace AppEjemploLayout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditarUsuario([Bind(Include = "correoElectronicoUsuario,nombresUsuario,apellidosUsuario,aliasUsuario,contraseñaUsuario")] Usuario usuario)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(usuario).State = EntityState.Modified;
