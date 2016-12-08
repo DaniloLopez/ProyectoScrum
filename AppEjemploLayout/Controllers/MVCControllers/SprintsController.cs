@@ -22,8 +22,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             return View(sprint.ToList());
         }
 
-        public ActionResult AsignarTareas()
+        public ActionResult AsignarTareas(int IdUsuario, int IdSprint)
         {
+            ViewBag.IdUsuario = IdUsuario;
+            ViewBag.IdSprint = IdSprint;
             return View();
         }
 

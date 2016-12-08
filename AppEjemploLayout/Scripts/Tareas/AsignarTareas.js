@@ -5,6 +5,8 @@ var idusuario = '1';
 var sprintId = '1';
 
 function Iniciar() {
+    idusuario = document.getElementById('input-idUsuario').value;
+    sprintId = document.getElementById('input-idSprint').value;
     Do_GetCall('/api/Tareas/GetSprint', [sprintId], cargarSprints(idusuario));
     Do_GetCall('/api/Tareas/GetTareasAsignar', [sprintId], cargarTareasAsignar);
 }

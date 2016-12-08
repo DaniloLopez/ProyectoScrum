@@ -15,7 +15,14 @@
         <h3>Historias de usuario</h3>
     </div>
     <br />
-    <a href="../AsignarTareas" class="btn btn-success">Tablero de tareas</a>    
+
+
+
+
+    <a href="../AsignarTareas/?IdUsuario=@Session["UsuarioId"].ToString()&IdSprint=@Model.sprint.SprintId" class="btn btn-success">Tablero de tareas</a>    
+
+
+
 
     <!-- Trigger the modal with a button -->
     <table class="table">
