@@ -217,7 +217,7 @@ namespace AppEjemploLayout.Controllers
             info.proyecto = proyecto;
             info.equipo= db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(p => p.usuario).ToList();
             info.productBacklog = db.HistoriaUsuarios.Where(p => p.ProyectoId== IdProyecto).OrderBy(c=>c.prioridad).ToList();
-
+            info.sprints = db.Sprint.Where(p => p.ProyectoId == IdProyecto).ToList();
             
             
             return View(info);

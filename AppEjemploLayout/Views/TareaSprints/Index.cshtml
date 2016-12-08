@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AppEjemploLayout.Models.ClasesSprints.TareaSprint>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sprint.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario.correoElectronicoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.asunto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estimacionHoras)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sprint.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario.correoElectronicoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.asunto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estimacionHoras)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TareaSprintId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TareaSprintId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TareaSprintId })
+        </td>
+    </tr>
+}
+
+</table>

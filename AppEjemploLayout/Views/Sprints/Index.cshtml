@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AppEjemploLayout.Models.ClasesSprints.Sprint>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.proyecto.nombreProyecto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.proyecto.nombreProyecto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SprintId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SprintId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SprintId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -88,6 +88,47 @@
     </table>
 </div>
 
+
+<div class="contenido">
+    <div class="text-center">
+        @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
+    </div>
+
+    <!-- Trigger the modal with a button -->
+    <a class="btn btn-info btn-lg" href="../Sprints/Create?IdProyecto=@Model.proyecto.ProyectoId">Crear HU</a>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sprints.First().SprintId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sprints.First().estado)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.sprints)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SprintId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.SprintId}) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.SprintId }) |
+                    @Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.SprintId })
+                </td>
+            </tr>
+        }
+
+
+
+    </table>
+</div>
+
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

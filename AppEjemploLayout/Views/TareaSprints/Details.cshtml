@@ -1,0 +1,67 @@
+﻿@model AppEjemploLayout.Models.ClasesSprints.TareaSprint
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TareaSprint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sprint.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sprint.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario.correoElectronicoUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario.correoElectronicoUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.asunto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.asunto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estimacionHoras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estimacionHoras)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TareaSprintId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

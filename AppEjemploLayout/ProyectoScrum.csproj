@@ -189,6 +189,8 @@
     <Compile Include="Controllers\MVCControllers\HomeController.cs" />
     <Compile Include="Controllers\MVCControllers\ManageController.cs" />
     <Compile Include="Controllers\MVCControllers\ProyectoesController.cs" />
+    <Compile Include="Controllers\MVCControllers\SprintsController.cs" />
+    <Compile Include="Controllers\MVCControllers\TareaSprintsController.cs" />
     <Compile Include="Controllers\MVCControllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -335,6 +337,16 @@
     <Content Include="Views\HistoriaUsuarios\Delete.cshtml" />
     <Content Include="Views\HistoriaUsuarios\Details.cshtml" />
     <Content Include="Views\HistoriaUsuarios\Edit.cshtml" />
+    <Content Include="Views\Sprints\Create.cshtml" />
+    <Content Include="Views\Sprints\Delete.cshtml" />
+    <Content Include="Views\Sprints\Details.cshtml" />
+    <Content Include="Views\Sprints\Edit.cshtml" />
+    <Content Include="Views\Sprints\Index.cshtml" />
+    <Content Include="Views\TareaSprints\Create.cshtml" />
+    <Content Include="Views\TareaSprints\Delete.cshtml" />
+    <Content Include="Views\TareaSprints\Details.cshtml" />
+    <Content Include="Views\TareaSprints\Edit.cshtml" />
+    <Content Include="Views\TareaSprints\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
