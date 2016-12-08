@@ -20,6 +20,10 @@ namespace AppEjemploLayout.Controllers
         // GET: HistoriaUsuarios/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -35,8 +39,11 @@ namespace AppEjemploLayout.Controllers
         // GET: HistoriaUsuarios/Create
         public ActionResult Create(int? idProyecto)
         {
-            
-            if(idProyecto == null)
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
+            if (idProyecto == null)
             {
                 return HttpNotFound();
             }
@@ -52,6 +59,10 @@ namespace AppEjemploLayout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "HistoriaUsuarioId,ProyectoId,nombre,contexto,descripcion,prioridad,ezfuerzo")] HistoriaUsuario historiaUsuario)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.HistoriaUsuarios.Add(historiaUsuario);
@@ -66,6 +77,10 @@ namespace AppEjemploLayout.Controllers
         // GET: HistoriaUsuarios/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -86,6 +101,10 @@ namespace AppEjemploLayout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "HistoriaUsuarioId,ProyectoId,nombre,contexto,descripcion,prioridad,ezfuerzo")] HistoriaUsuario historiaUsuario)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(historiaUsuario).State = EntityState.Modified;
@@ -99,6 +118,10 @@ namespace AppEjemploLayout.Controllers
         // GET: HistoriaUsuarios/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -116,6 +139,10 @@ namespace AppEjemploLayout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             HistoriaUsuario historiaUsuario = db.HistoriaUsuarios.Find(id);
             db.HistoriaUsuarios.Remove(historiaUsuario);
             db.SaveChanges();
