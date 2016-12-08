@@ -216,7 +216,7 @@ namespace AppEjemploLayout.Controllers
             InformacionDeProyecto info = new InformacionDeProyecto();
             info.proyecto = proyecto;
             info.equipo= db.ProyectoUsuario.Where(p => p.ProyectoId == IdProyecto).Include(p => p.usuario).ToList();
-            info.productBacklog = null;
+            info.productBacklog = db.HistoriaUsuarios.Where(p => p.ProyectoId== IdProyecto).OrderBy(c=>c.prioridad).ToList();
 
             
             

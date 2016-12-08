@@ -1,0 +1,67 @@
+﻿@model AppEjemploLayout.Models.ClasesHistoriaUsuario.HistoriaUsuario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HistoriaUsuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.proyecto.nombreProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proyecto.nombreProyecto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contexto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contexto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prioridad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prioridad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ezfuerzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ezfuerzo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HistoriaUsuarioId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

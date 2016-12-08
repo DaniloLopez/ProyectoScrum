@@ -183,6 +183,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\APIControllers\EquipoController.cs" />
+    <Compile Include="Controllers\HistoriaUsuariosController.cs" />
     <Compile Include="Controllers\MVCControllers\AccountController.cs" />
     <Compile Include="Controllers\APIControllers\AutoCompleteController.cs" />
     <Compile Include="Controllers\MVCControllers\HomeController.cs" />
@@ -324,6 +325,10 @@
     <Content Include="Views\Proyectoes\AgregarIntegrante.cshtml" />
     <Content Include="Views\Proyectoes\EquipoDesarrollo.cshtml" />
     <Content Include="Views\Proyectoes\UsuariosProyecto.cshtml" />
+    <Content Include="Views\HistoriaUsuarios\Create.cshtml" />
+    <Content Include="Views\HistoriaUsuarios\Delete.cshtml" />
+    <Content Include="Views\HistoriaUsuarios\Details.cshtml" />
+    <Content Include="Views\HistoriaUsuarios\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
