@@ -195,14 +195,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612072045149_migracionViweModel.cs" />
-    <Compile Include="Migrations\201612072045149_migracionViweModel.Designer.cs">
-      <DependentUpon>201612072045149_migracionViweModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612080053586_migracion_Sprints.cs" />
-    <Compile Include="Migrations\201612080053586_migracion_Sprints.Designer.cs">
-      <DependentUpon>201612080053586_migracion_Sprints.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClasesHistoriaUsuario\HistoriaUsuario.cs" />
@@ -358,14 +350,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612072045149_migracionViweModel.resx">
-      <DependentUpon>201612072045149_migracionViweModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612080053586_migracion_Sprints.resx">
-      <DependentUpon>201612080053586_migracion_Sprints.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
