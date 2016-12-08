@@ -14,13 +14,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
     public class TareaSprintsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: TareaSprints
-        public ActionResult Index()
-        {
-            var tareaSprint = db.TareaSprint.Include(t => t.sprint).Include(t => t.usuario);
-            return View(tareaSprint.ToList());
-        }
+        
 
         // GET: TareaSprints/Details/5
         public ActionResult Details(int? id)
@@ -59,7 +53,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             {
                 db.TareaSprint.Add(tareaSprint);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("");
             }
 
             ViewBag.SprintId = new SelectList(db.Sprint, "SprintId", "estado", tareaSprint.SprintId);

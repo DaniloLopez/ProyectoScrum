@@ -208,6 +208,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Proyecto_Usuario\ProyectoUsuarioRelacion.cs" />
     <Compile Include="Models\ViewModel\InformacionDeProyecto.cs" />
+    <Compile Include="Models\ViewModel\InformacionSprint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -322,7 +323,6 @@
     <Content Include="Views\Proyectoes\Index.cshtml" />
     <Content Include="Views\Proyectoes\ListaUsuarios.cshtml" />
     <Content Include="Views\Usuarios\RegistrarUsuario.cshtml" />
-    <Content Include="Views\Proyectoes\AgregarIntegrante.cshtml" />
     <Content Include="Views\Proyectoes\EquipoDesarrollo.cshtml" />
     <Content Include="Views\Proyectoes\UsuariosProyecto.cshtml" />
     <Content Include="Views\HistoriaUsuarios\Create.cshtml" />
@@ -333,12 +333,10 @@
     <Content Include="Views\Sprints\Delete.cshtml" />
     <Content Include="Views\Sprints\Details.cshtml" />
     <Content Include="Views\Sprints\Edit.cshtml" />
-    <Content Include="Views\Sprints\Index.cshtml" />
     <Content Include="Views\TareaSprints\Create.cshtml" />
     <Content Include="Views\TareaSprints\Delete.cshtml" />
     <Content Include="Views\TareaSprints\Details.cshtml" />
     <Content Include="Views\TareaSprints\Edit.cshtml" />
-    <Content Include="Views\TareaSprints\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
