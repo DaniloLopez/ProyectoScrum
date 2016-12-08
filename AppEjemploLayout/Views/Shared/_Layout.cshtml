@@ -40,7 +40,14 @@
                         <ul class="nav navbar-nav">
                             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                             <li>@Html.ActionLink("INICIO", "Index", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
-                            <li><a href="http://aducuwawok.jimdo.com">BLOG</a></li>
+                            @if (Session["NombreUsuario"] != null)
+                            {
+                                <li>@Html.ActionLink("PROYECTOS", "Index", "Proyectoes", new { @class = "hvr-sweep-to-bottom" })</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("DESCUBRIR", "About", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
+                            }
                             <li>@Html.ActionLink("SOPORTE", "Contact", "Home", new { @class = "hvr-sweep-to-bottom" })</li>
                             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
@@ -110,7 +117,7 @@
             </div>
         </footer>
     }
-       
+
 
     @Scripts.Render("~/bundles/index")
 

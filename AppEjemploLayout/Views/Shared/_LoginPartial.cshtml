@@ -1,30 +1,31 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Session["NombreUsuario"]!=null)
+@if (Session["NombreUsuario"] != null)
 {
     using (Html.BeginForm("CerrarSesion", "Usuarios", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
+        <div class="hvr-sweep-to-bottom">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" id="menu1" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>
+                        @Session["NombreUsuario"] &nbsp;
 
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle" id="menu1" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span>
-                    @Session["NombreUsuario"] &nbsp;
+                        <span class="glyphicon glyphicon-cog">&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 
-                    <span class="glyphicon glyphicon-cog">&nbsp;</span>
-                </a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li>@Html.ActionLink("Perfil", "InformacionUsuario", "Usuarios", null)</li>
 
-                    <li>@Html.ActionLink("Perfil", "InformacionUsuario", "Usuarios", null)</li>
-
-                    <li role="presentation">
-                        @Html.ActionLink("Administrar", "Index", "Manage", routeValues: null, htmlAttributes: new { })
-                    </li>
-                    <li role="presentation" class="divider"></li>
-                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
-                </ul>
-            </li>
-        </ul>
+                        <li role="presentation">
+                            @Html.ActionLink("Administrar", "Index", "Manage", routeValues: null, htmlAttributes: new { })
+                        </li>
+                        <li role="presentation" class="divider"></li>
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     }
 }
 else
