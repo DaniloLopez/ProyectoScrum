@@ -19,6 +19,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: TareaSprints/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -34,6 +38,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: TareaSprints/Create
         public ActionResult Create(int? idSprint)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (idSprint == null)
             {
                 return HttpNotFound();
@@ -49,6 +57,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "TareaSprintId,asunto,descripcion,estado,estimacionHoras,SprintId,UsuarioId")] TareaSprint tareaSprint)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.TareaSprint.Add(tareaSprint);
@@ -64,6 +76,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: TareaSprints/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -85,6 +101,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "TareaSprintId,asunto,descripcion,estado,estimacionHoras,SprintId,UsuarioId")] TareaSprint tareaSprint)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(tareaSprint).State = EntityState.Modified;
@@ -99,6 +119,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: TareaSprints/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -116,6 +140,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             TareaSprint tareaSprint = db.TareaSprint.Find(id);
             db.TareaSprint.Remove(tareaSprint);
             db.SaveChanges();
