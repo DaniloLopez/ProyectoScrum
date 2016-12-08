@@ -18,7 +18,7 @@ function guardarIntegrante(IdUsuario) {
         var IdProyecto = document.getElementById("txt-idProyecto").value;
         var elem_rol = document.getElementById("cmb-rol");
         var rol = elem_rol.options[elem_rol.selectedIndex].text;
-        var urlnew = '../Proyectoes/UsuariosProyecto?IdProyecto=' + IdProyecto;
+        var urlnew = '../Proyectoes/UsuariosProyecto?IdProyecto='+IdProyecto;
         
         $.ajax({
             url: '/api/AgregarAEquipo/' + IdProyecto + '/' + IdUsuario + '/' + rol,
