@@ -34,7 +34,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             info.sprint = sprint;
             info.tareas = db.TareaSprint.Where(p=>p.SprintId==id).ToList();
             info.historiasUsuario = db.HistoriaUsuarios.Where(p => p.SprintId == id).ToList();
-
+            ViewBag.rol = db.ProyectoUsuario.Where(p => p.ProyectoId == sprint.ProyectoId && p.UsuarioID == (int)Session["UsuarioId"]);
             return View(info);
         }
 
