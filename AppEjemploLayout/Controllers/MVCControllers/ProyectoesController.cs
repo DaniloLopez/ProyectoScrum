@@ -95,7 +95,7 @@ namespace AppEjemploLayout.Controllers
                 db.ProyectoUsuario.Add(p);
                 db.SaveChanges();
 
-                return RedirectToAction("ListaUsuarios", new { IdProyecto = p.ProyectoId });
+                return RedirectToAction("UsuariosProyecto", new { IdProyecto = p.ProyectoId });
             }
 
             return View(proyecto);
