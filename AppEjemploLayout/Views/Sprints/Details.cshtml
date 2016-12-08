@@ -6,38 +6,95 @@
 }
 
 
+<div class="contenido col-md-offset-1">
+    <div class="text-center">
+        @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
+    </div>
 
-<div>
-    <h4>Sprint</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.proyecto.nombreProyecto)
-        </dt>
+    <!-- Trigger the modal with a button -->
 
-        <dd>
-            @Html.DisplayFor(model => model.proyecto.nombreProyecto)
-        </dd>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.historiasUsuario.First().nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.historiasUsuario.First().prioridad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.historiasUsuario.First().ezfuerzo)
+            </th>
+            <th></th>
+        </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.duracion)
-        </dt>
+        @foreach (var item in Model.historiasUsuario)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prioridad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ezfuerzo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.HistoriaUsuarioId }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.HistoriaUsuarioId }) |
+                    @Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.HistoriaUsuarioId })
+                </td>
+            </tr>
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.duracion)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estado)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.estado)
-        </dd>
-
-    </dl>
+    </table>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SprintId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+<div class="contenido col-md-offset-1">
+    <div class="text-center">
+        @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
+    </div>
+
+    <!-- Trigger the modal with a button -->
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tareas.First().asunto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tareas.First().estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tareas.First().estimacionHoras)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.tareas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.asunto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estimacionHoras)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.TareaSprintId }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.TareaSprintId }) |
+                    @Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.TareaSprintId })
+                </td>
+            </tr>
+        }
+
+
+
+    </table>
+</div>
