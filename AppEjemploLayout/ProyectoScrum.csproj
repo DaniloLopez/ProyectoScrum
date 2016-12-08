@@ -337,6 +337,7 @@
     <Content Include="Views\TareaSprints\Delete.cshtml" />
     <Content Include="Views\TareaSprints\Details.cshtml" />
     <Content Include="Views\TareaSprints\Edit.cshtml" />
+    <Content Include="Views\Account\perfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

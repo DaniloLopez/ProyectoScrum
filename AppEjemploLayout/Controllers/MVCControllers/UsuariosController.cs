@@ -28,7 +28,7 @@ namespace AppEjemploLayout.Controllers
         public ActionResult InformacionUsuario()
         {
             
-            Usuario usuario = db.Usuarios.Find((string)Session["NombreUsuario"]);
+            Usuario usuario = db.Usuarios.Find((int)Session["UsuarioId"]);
             if (usuario == null)
             {
                 return HttpNotFound();

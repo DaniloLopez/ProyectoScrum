@@ -15,7 +15,7 @@
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 
-                        <li>@Html.ActionLink("Perfil", "InformacionUsuario", "Usuarios", null)</li>
+                        <li>@Html.ActionLink("Perfil", "InformacionUsuario", "Usuarios", routeValues: null, htmlAttributes: new { })</li>
 
                         <li role="presentation">
                             @Html.ActionLink("Administrar", "Index", "Manage", routeValues: null, htmlAttributes: new { })
