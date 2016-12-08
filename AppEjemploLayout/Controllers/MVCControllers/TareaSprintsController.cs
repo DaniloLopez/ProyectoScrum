@@ -53,7 +53,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             {
                 db.TareaSprint.Add(tareaSprint);
                 db.SaveChanges();
-                return RedirectToAction("");
+                return RedirectToAction("Details","Sprints",new { id = tareaSprint.SprintId });
             }
 
             ViewBag.SprintId = new SelectList(db.Sprint, "SprintId", "estado", tareaSprint.SprintId);
