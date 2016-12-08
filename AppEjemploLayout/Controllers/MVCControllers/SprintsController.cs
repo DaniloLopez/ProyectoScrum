@@ -20,6 +20,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: Sprints/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -41,6 +45,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: Sprints/Create
         public ActionResult Create(int? idProyecto)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (idProyecto == null)
             {
                 return HttpNotFound();
@@ -57,6 +65,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "SprintId,duracion,estado,ProyectoId")] Sprint sprint)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.Sprint.Add(sprint);
@@ -71,6 +83,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: Sprints/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -91,6 +107,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "SprintId,duracion,estado,ProyectoId")] Sprint sprint)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(sprint).State = EntityState.Modified;
@@ -104,6 +124,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         // GET: Sprints/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -121,6 +145,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             Sprint sprint = db.Sprint.Find(id);
             db.Sprint.Remove(sprint);
             db.SaveChanges();
