@@ -41,6 +41,7 @@ namespace AppEjemploLayout.Controllers
         // GET: Proyectoes/Details/5
         public ActionResult Details(int? id)
         {
+
             if (Session["Usuario"] != null && (bool)Session["Usuario"] != false)
             {
                 if (id == null)
@@ -74,6 +75,10 @@ namespace AppEjemploLayout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CrearProyecto(Proyecto proyecto)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
 
             if (ModelState.IsValid)
             {
@@ -99,6 +104,10 @@ namespace AppEjemploLayout.Controllers
         // GET: Proyectoes/Edit/5
         public ActionResult EditarProyecto(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -118,6 +127,10 @@ namespace AppEjemploLayout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditarProyecto([Bind(Include = "ProyectoId,nombreProyecto,descripcionProyecto,fechaInicioProyecto,fechaFinalizacionProyecto,estadoProyecto")] Proyecto proyecto)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(proyecto).State = EntityState.Modified;
@@ -131,6 +144,10 @@ namespace AppEjemploLayout.Controllers
         // GET: Proyectoes/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -148,6 +165,10 @@ namespace AppEjemploLayout.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             Proyecto proyecto = db.Proyectoes.Find(id);
             db.Proyectoes.Remove(proyecto);
             db.ProyectoUsuario.RemoveRange(db.ProyectoUsuario.Where(p => p.ProyectoId.Equals(id)).ToList());
@@ -157,6 +178,10 @@ namespace AppEjemploLayout.Controllers
         
         public ActionResult ListaUsuarios(int? IdProyecto)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (IdProyecto == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -200,6 +225,10 @@ namespace AppEjemploLayout.Controllers
 
         public ActionResult UsuariosProyecto(int? IdProyecto)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (IdProyecto == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -226,6 +255,10 @@ namespace AppEjemploLayout.Controllers
 
         public ActionResult AgregarIntegrante(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -243,6 +276,10 @@ namespace AppEjemploLayout.Controllers
         [System.Web.Mvc.Route("api/InsertarIntegrante/{IdUsuario}")]
         public ActionResult EliminarIntegrante(int? id)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("InicioSesion", "Usuarios", null);
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
