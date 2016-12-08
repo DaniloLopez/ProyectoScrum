@@ -31,11 +31,10 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" hidden>
             @Html.LabelFor(model => model.estado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control", @Value = "Sin Asignar" } })
             </div>
         </div>
 
@@ -54,14 +53,7 @@
             </div>
         </div>
 
-        <div class="form-group" hidden>
-            @Html.LabelFor(model => model.UsuarioId, "UsuarioId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UsuarioId, new { htmlAttributes = new { @class = "form-control", @Value = (int)Session["UsuarioId"] } })
-
-
-            </div>
-        </div>
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -72,5 +64,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver", "Details","Sprints","",new { id= ViewBag.idSprint })
 </div>
