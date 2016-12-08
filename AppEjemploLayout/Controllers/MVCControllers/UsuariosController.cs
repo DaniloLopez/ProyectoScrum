@@ -64,6 +64,7 @@ namespace AppEjemploLayout.Controllers
                     db.SaveChanges();
                     Session["Usuario"] = true;
                     Session["NombreUsuario"] = usuario.correoElectronicoUsuario;
+                    Session["UsuarioId"] = usuario.UsuarioId;
                     return RedirectToAction("Index", "Proyectoes", null);
                 }
                 else
@@ -85,7 +86,7 @@ namespace AppEjemploLayout.Controllers
             Session["Usuario"] = null;
             Session["NombreUsuario"] = null;
             Session["FalloSesion"] = null;
-
+            Session["UsuarioId"] = null;
             return RedirectToAction("Index","Home",null);
 
         }
