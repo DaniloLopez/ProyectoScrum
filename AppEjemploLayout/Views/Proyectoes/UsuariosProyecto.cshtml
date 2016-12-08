@@ -4,13 +4,13 @@
     ViewBag.Title = "UsuariosProyecto";
 }
 
-<div class="contenido">
+<div class="contenido col-md-offset-1">
     <div class="text-center">
         @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
     </div>    
 
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Agregar</button>
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Agregar</button>
 
 
 
@@ -48,13 +48,13 @@
 </div>
 
 
-<div class="contenido">
+<div class="contenido col-md-offset-1">
     <div class="text-center">
         @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
     </div>
 
     <!-- Trigger the modal with a button -->
-    <a  class="btn btn-info btn-lg" href="../HistoriaUsuarios/Create?IdProyecto=@Model.proyecto.ProyectoId">Crear HU</a>
+    <a  class="btn btn-success btn-lg" href="../HistoriaUsuarios/Create?IdProyecto=@Model.proyecto.ProyectoId">Nueva HU</a>
     <table class="table">
         <tr>
             <th>
@@ -89,13 +89,13 @@
 </div>
 
 
-<div class="contenido">
+<div class="contenido col-md-offset-1">
     <div class="text-center">
         @* <h2>Proyecto @Html.DisplayFor(modelItem => Model.proyecto.nombreProyecto)</h2> *@
     </div>
 
     <!-- Trigger the modal with a button -->
-    <a class="btn btn-info btn-lg" href="../Sprints/Create?IdProyecto=@Model.proyecto.ProyectoId">Crear HU</a>
+    <a class="btn btn-success btn-lg" href="../Sprints/Create?IdProyecto=@Model.proyecto.ProyectoId">Nuevo sprint</a>
     <table class="table">
         <tr>
             <th>
