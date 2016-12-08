@@ -27,12 +27,12 @@ function guardarIntegrante(IdUsuario) {
             contentType: 'application/json; charset=utf-8',
             dataType: "json",
             success: function (data) {
-                window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto=1';
+                window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto='+IdProyecto;
             }
         }).fail(
         function (xhr, textStatus, err) {
             alert("mal =(");
-            window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto=1';
+            window.location.href = '../Proyectoes/UsuariosProyecto?IdProyecto'=IdProyecto;
         });
     }
     

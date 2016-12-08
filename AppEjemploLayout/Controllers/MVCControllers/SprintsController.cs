@@ -14,13 +14,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
     public class SprintsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: Sprints
-        public ActionResult Index()
-        {
-            var sprint = db.Sprint.Include(s => s.proyecto);
-            return View(sprint.ToList());
-        }
+ 
 
         // GET: Sprints/Details/5
         public ActionResult Details(int? id)
