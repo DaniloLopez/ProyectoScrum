@@ -4,48 +4,48 @@
     ViewBag.Title = "InformacionUsuario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br /><br />
 
-<h2>Perfil</h2>
+<div class="contenido">
+    <h2>Perfil de Usuario</h2>
 
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombresUsuario)
-        </dt>
+    <div class="container">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombresUsuario)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombresUsuario)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.nombresUsuario)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.apellidosUsuario)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.apellidosUsuario)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.apellidosUsuario)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.apellidosUsuario)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.aliasUsuario)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.aliasUsuario)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.aliasUsuario)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.aliasUsuario)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.contraseñaUsuario)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.correoElectronicoUsuario)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.contraseñaUsuario)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.correoElectronicoUsuario)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+
 </div>
-<p>
-    @Html.ActionLink("Editar", "EditarUsuario") |
-    @Html.ActionLink("Pagina principal", "Index")
-</p>
+   
