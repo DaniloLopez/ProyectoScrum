@@ -36,6 +36,11 @@ namespace AppEjemploLayout
             bundles.Add(new ScriptBundle("~/scripts/eventosProyecto").Include(
                 "~/Scripts/ScriptsProyecto/ManejoEventos.js"));
 
+            bundles.Add(new ScriptBundle("~/scripts/burndown").Include(
+                "~/Scripts/Graficos/DrawChart.js",
+                "~/Scripts/Graficos/SprintBurndown.js",
+                "~/Scripts/Tareas/WebClient.js"));
+
             bundles.Add(new ScriptBundle("~/scripts/ctrl-asignarTareas").Include(
                 "~/Scripts/Tareas/eventos-tarea.js",
                 "~/Scripts/Tareas/AsignarTareas.js",

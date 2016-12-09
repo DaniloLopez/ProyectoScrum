@@ -59,8 +59,8 @@ function cargarTareas(sprint) {
                 if (tarea.estado == estadoActual) {
                     td.appendChild(crearCajaTarea(tarea));
                 }
-                tr.appendChild(td);
             }
+            tr.appendChild(td);
         }
         var tblBody = document.getElementById('tblbody');
         tblBody.appendChild(tr);

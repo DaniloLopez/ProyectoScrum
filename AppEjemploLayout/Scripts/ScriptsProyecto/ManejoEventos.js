@@ -1,6 +1,7 @@
 ﻿
 var urlOriginal = "";
 window.onload = function () {
+    IniciarGrafico();
     urlOriginal = "" + window.location.href;
     cargarAutocompletado('nombreUsuario', '/api/AutoComplete', function () {
         var obj = $("#nombreUsuario").getSelectedItemData();
