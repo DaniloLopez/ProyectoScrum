@@ -10,6 +10,7 @@
     
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <br />
             <h2>Sprint @Html.DisplayFor(m => Model.sprint.SprintId)</h2>
             <br />
         </div>
@@ -66,9 +67,20 @@
                                 @Html.DisplayFor(modelItem => item.ezfuerzo)
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.HistoriaUsuarioId }) |
-                                @Html.ActionLink("Detalles", "Details", new { id = item.HistoriaUsuarioId }) |
-                                @Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.HistoriaUsuarioId })
+                                <a href="@Html.ActionLink("Editar", "Edit", new { id = item.HistoriaUsuarioId })">
+                                    <span class="glyphicon glyphicon-eye-open"></span> | 
+                                </a>
+                                
+                                
+                                <a href="@Html.ActionLink("Detalles", "Details", new { id = item.HistoriaUsuarioId }) ">
+                                    <span class="glyphicon glyphicon-pencil"></span> | 
+                                </a>
+                                
+                                
+                                <a href="@Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.HistoriaUsuarioId })">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                                
                             </td>
                         </tr>
                     }
@@ -119,10 +131,18 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.estimacionHoras)
                             </td>
-                            <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.TareaSprintId }) |
-                                @Html.ActionLink("Detalles", "Details", new { id = item.TareaSprintId }) |
-                                @Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.TareaSprintId })
+                            <td>                                
+                                <a href="@Html.ActionLink("Detalles", "Details", new { id = item.TareaSprintId })">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </a>
+
+                                <a href="@Html.ActionLink("Editar", "Edit", new { id = item.TareaSprintId })">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>                                                                                                
+                                
+                                <a href="@Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.TareaSprintId })">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>                                
                             </td>
                         </tr>
                     }
