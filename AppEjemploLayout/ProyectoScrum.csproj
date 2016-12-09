@@ -359,6 +359,7 @@
     <Content Include="Views\Home\Contactanos.cshtml" />
     <Content Include="Views\Usuarios\Delete.cshtml" />
     <Content Include="Views\Sprints\AsignarHU.cshtml" />
+    <Content Include="Views\Usuarios\RecuperarContraseña.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
