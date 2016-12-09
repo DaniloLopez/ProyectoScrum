@@ -5,63 +5,60 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>HistoriaUsuario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.proyecto.nombreProyecto)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.proyecto.nombreProyecto)
-        </dd>
+<div class="contenido ">
+    <br/>
+    <h2 class="text-center">Historia de usuario</h2>
+    <div class="col-lg-offset-1">
+        <dl class="dl-horizontal">
+            
+            <dd>
+                @Html.DisplayFor(model => model.proyecto.nombreProyecto)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nombre)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombre)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.contexto)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.contexto)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.contexto)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.contexto)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.descripcion)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.descripcion)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.prioridad)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.prioridad)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.prioridad)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.prioridad)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ezfuerzo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ezfuerzo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ezfuerzo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ezfuerzo)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <a href="/Proyectoes/UsuariosProyecto?IdProyecto=@ViewBag.proyectoId">Volver</a>
+    
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.HistoriaUsuarioId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
