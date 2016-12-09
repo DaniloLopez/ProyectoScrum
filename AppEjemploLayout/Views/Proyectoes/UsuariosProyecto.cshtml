@@ -101,12 +101,12 @@
                                     @Html.DisplayFor(modelItem => item.prioridad)
                                 </td>
                                 <td>
-                                    <a href="@Url.Action("Edit","HistoriaUsuarios", new { id = item.HistoriaUsuarioId },"")">
-                                        <span class="glyphicon glyphicon-pencil">&nbsp;|&nbsp;</span>
-                                    </a>
                                     <a href="@Url.Action("Details", "HistoriaUsuarios", new { id = item.HistoriaUsuarioId }, "")">
                                         <span class="glyphicon glyphicon-eye-open">&nbsp;|&nbsp;</span>
                                     </a>
+                                    <a href="@Url.Action("Edit","HistoriaUsuarios", new { id = item.HistoriaUsuarioId },"")">
+                                        <span class="glyphicon glyphicon-pencil">&nbsp;|&nbsp;</span>
+                                    </a>                                    
                                     <a href="@Url.Action("EliminarIntegrante", "HistoriaUsuarios", new { id = item.HistoriaUsuarioId }, "")">
                                         <span class="glyphicon glyphicon-trash" ></span>
                                     </a>
