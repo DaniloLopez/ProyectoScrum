@@ -16,8 +16,14 @@ namespace AppEjemploLayout.Controllers
 {
     public class UsuariosController : Controller
     {
+
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        public ActionResult RecuperarContraseña()
+        {
+            return View();
+        }
+        
         // GET: Usuarios
         public ActionResult Index()
         {
