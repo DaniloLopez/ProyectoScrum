@@ -134,6 +134,11 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             return View(sprint);
         }
 
+        public ActionResult AsignarHU()
+        {
+            return View();
+        }
+
         // GET: Sprints/Delete/5
         public ActionResult Delete(int? id)
         {
