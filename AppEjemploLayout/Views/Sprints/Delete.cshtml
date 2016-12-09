@@ -5,46 +5,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Eliminar Sprint</h2>
+<div class="contenido">
 
-<h3>¿Está seguro que quiere eliminar esto?</h3>
-<div>
-   
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.proyecto.nombreProyecto)
-        </dt>
+    <h2 class="text-center">Eliminar Sprint</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.proyecto.nombreProyecto)
-        </dd>
+    <h3 class="text-center">¿Está seguro que quiere eliminar esto?</h3>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.duracion)
-        </dt>
+    <div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.duracion)
-        </dd>
+        <div class="container well">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estado)
-        </dt>
+            <dl class="dl-horizontal">
+                <dd>
+                    @Html.DisplayFor(model => model.proyecto.nombreProyecto)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.estado)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.duracion)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.duracion)
+                </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                <dt>
+                    @Html.DisplayNameFor(model => model.estado)
+                </dt>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            <a href="/Proyectoes/UsuariosProyecto?IdProyecto=@ViewBag.proyectoId">Volver</a>
-            @*@Html.ActionLink("Volver", "UsuariosProyecto","Proyectoes","IdProducto=1", null)*@
+                <dd>
+                    @Html.DisplayFor(model => model.estado)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">                    
+                    <input type="submit" value="Eliminar" class="btn btn-success" />
+                </div>
+
+                
+            }
         </div>
-    }
+
+        <div>
+            <a href="/Proyectoes/UsuariosProyecto?IdProyecto=@ViewBag.proyectoId">Volver</a>
+        </div>
+    </div>
 </div>
