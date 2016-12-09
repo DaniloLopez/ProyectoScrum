@@ -46,7 +46,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ProyectoId = idSprint;
+            ViewBag.IdSprint = idSprint;
             return View();
         }
 

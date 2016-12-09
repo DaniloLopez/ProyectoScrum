@@ -22,8 +22,10 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             return View(sprint.ToList());
         }
 
-        public ActionResult AsignarTareas()
+        public ActionResult AsignarTareas(int IdUsuario, int IdSprint)
         {
+            ViewBag.IdUsuario = IdUsuario;
+            ViewBag.IdSprint = IdSprint;
             return View();
         }
 
@@ -147,6 +149,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             {
                 return HttpNotFound();
             }
+            ViewBag.proyectoId = sprint.ProyectoId;
             return View(sprint);
         }
 
@@ -162,7 +165,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             Sprint sprint = db.Sprint.Find(id);
             db.Sprint.Remove(sprint);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("UsuariosProyecto","Proyectoes", new { IdProyecto = sprint.ProyectoId });
         }
 
         protected override void Dispose(bool disposing)
