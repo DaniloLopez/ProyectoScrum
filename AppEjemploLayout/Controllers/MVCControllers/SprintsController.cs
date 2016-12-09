@@ -109,7 +109,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
                 return HttpNotFound();
             }
             ViewBag.ProyectoId = new SelectList(db.Proyectoes, "ProyectoId", "nombreProyecto", sprint.ProyectoId);
-            ViewBag.proyectoId = sprint.ProyectoId;
+            ViewBag.Id = sprint.ProyectoId;
             return View(sprint);
         }
 
