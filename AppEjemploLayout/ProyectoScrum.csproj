@@ -186,7 +186,7 @@
     <Compile Include="Controllers\APIControllers\EquipoController.cs" />
     <Compile Include="Controllers\APIControllers\GraficosController.cs" />
     <Compile Include="Controllers\APIControllers\TareasController.cs" />
-    <Compile Include="Controllers\HistoriaUsuariosController.cs" />
+    <Compile Include="Controllers\MVCControllers\HistoriaUsuariosController.cs" />
     <Compile Include="Controllers\MVCControllers\AccountController.cs" />
     <Compile Include="Controllers\APIControllers\AutoCompleteController.cs" />
     <Compile Include="Controllers\MVCControllers\HomeController.cs" />

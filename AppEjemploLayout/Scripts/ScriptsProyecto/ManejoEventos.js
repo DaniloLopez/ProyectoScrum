@@ -43,13 +43,6 @@ function guardarIntegrante(IdUsuario) {
     
 }
 
-function eliminarProyecto() {
-    return function () {
-        var IdProyecto = document.getElementByUd("txt-idProuyecto").value;
-
-    }
-}
-
 
 
 function cargarAutocompletado(inputName, baseurl, fun) {
