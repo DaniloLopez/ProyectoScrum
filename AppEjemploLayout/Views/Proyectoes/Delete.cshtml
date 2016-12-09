@@ -4,61 +4,69 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br /><br />
+<div class="contenido">
+    <div class="text-center">
+        <h3 class="text-left">¿Esta seguro que desea eliminar el pryecto?</h3>
+        <br />
+        <div class="table-responsive">
 
-<h2>Eliminar proyecto</h2>
+            <dl class="dl-horizontal">
+                <dt>
+                    <label>Nombre del proyecto:</label>
+                </dt>
 
-<h3>¿Esta seguro que desea eliminar el proyecto?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombreProyecto)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.nombreProyecto)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombreProyecto)
-        </dd>
+                <dt>
+                    <label>Descripción:</label>
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.descripcionProyecto)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.descripcionProyecto)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.descripcionProyecto)
-        </dd>
+                <dt>
+                    <label>Fecha de inicio:</label>
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fechaInicioProyecto)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.fechaInicioProyecto)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fechaInicioProyecto)
-        </dd>
+                <dt>
+                    <label>Fecha de finalización:</label>
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fechaFinalizacionProyecto)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.fechaFinalizacionProyecto)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fechaFinalizacionProyecto)
-        </dd>
+                <dt>
+                    <label>Estado:</label>
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estadoProyecto)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.estadoProyecto)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.estadoProyecto)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Volver", "Index")
+            </dl>
         </div>
-    }
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-offset-2">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Volver", "Index")
+            </div>
+        }
+    </div>
+</div>
+
+<div>
+
+    
 </div>

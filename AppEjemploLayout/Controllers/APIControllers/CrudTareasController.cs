@@ -55,20 +55,25 @@ namespace AppEjemploLayout.Controllers.APIControllers
             try
             {
                 db.SaveChanges();
-                var lista = db.TareaSprint.Where(p => p.SprintId == tareaSprint.SprintId);
-                var cont = 0;
-                foreach (var i in lista)
-                {
-                    if (i.estado.CompareTo("Terminada") == 0)
-                        cont++;
-                }
-                if (lista.Count()-cont==0)
-                {
-                    var sprint = db.Sprint.Find(tareaSprint.SprintId);
-                    sprint.estado = "CERRADO";
-                    db.Entry(sprint).State = EntityState.Modified;
-                    db.SaveChanges();
-                }
+                var lista = db.TareaSprint.Where(p => p.SprintId == tareaSprint.SprintId
+                && p.estado != "Terminada").ToList();
+                var sprint = db.Sprint.Find(tareaSprint.SprintId);
+                sprint.estado = (lista.Count > 0) ? "Abierto" : "Cerrado";
+                db.Entry(sprint).State = EntityState.Modified;
+                db.SaveChanges();
+
+                //var cont = 0;
+                //foreach (var i in lista)
+                //{
+                //    if (i.estado.CompareTo("Terminada") == 0)
+                //        cont++;
+                //}
+                //if (lista.Count()-cont==0)
+                //{
+                //    var sprint = db.Sprint.Find(tareaSprint.SprintId);
+                //    sprint.estado = "CERRADO";
+
+                //}
             }
             catch (DbUpdateConcurrencyException)
             {

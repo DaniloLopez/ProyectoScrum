@@ -1,6 +1,7 @@
 ﻿
 var urlOriginal = "";
 window.onload = function () {
+    IniciarGrafico();
     urlOriginal = "" + window.location.href;
     cargarAutocompletado('nombreUsuario', '/api/AutoComplete', function () {
         var obj = $("#nombreUsuario").getSelectedItemData();
@@ -42,6 +43,12 @@ function guardarIntegrante(IdUsuario) {
     
 }
 
+function eliminarProyecto() {
+    return function () {
+        var IdProyecto = document.getElementByUd("txt-idProuyecto").value;
+
+    }
+}
 
 
 
