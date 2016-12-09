@@ -55,6 +55,20 @@ namespace AppEjemploLayout.Controllers.APIControllers
             try
             {
                 db.SaveChanges();
+                var lista = db.TareaSprint.Where(p => p.SprintId == tareaSprint.SprintId);
+                var cont = 0;
+                foreach (var i in lista)
+                {
+                    if (i.estado.CompareTo("Terminada") == 0)
+                        cont++;
+                }
+                if (lista.Count()-cont==0)
+                {
+                    var sprint = db.Sprint.Find(tareaSprint.SprintId);
+                    sprint.estado = "CERRADO";
+                    db.Entry(sprint).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
             catch (DbUpdateConcurrencyException)
             {
