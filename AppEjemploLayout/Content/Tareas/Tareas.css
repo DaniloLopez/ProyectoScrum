@@ -1,9 +1,13 @@
 ﻿.bx-tarea {
-    border: 1px solid #46494C;
     margin: 5px 0px 5px 0px;
     min-height: 40px;
     padding: 5px;
-    background-color: #FFF;
+    background-color: aliceblue;
+    color: #000000;
+    display: table;
+	position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    overflow: hidden;
 }
 
 .titleContent {
