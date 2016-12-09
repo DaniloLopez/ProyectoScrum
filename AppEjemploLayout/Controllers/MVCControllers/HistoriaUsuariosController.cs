@@ -147,7 +147,8 @@ namespace AppEjemploLayout.Controllers
             HistoriaUsuario historiaUsuario = db.HistoriaUsuarios.Find(id);
             db.HistoriaUsuarios.Remove(historiaUsuario);
             db.SaveChanges();
-            return RedirectToAction("Index","Proyectoes");
+            
+            return RedirectToAction("UsuariosProyecto", "Proyectoes",new { IdProyecto = historiaUsuario.ProyectoId});
         }
 
         protected override void Dispose(bool disposing)
