@@ -33,7 +33,7 @@ namespace AppEjemploLayout.Models.ClasesHistoriaUsuario
         public string contexto { get; set; }
 
         [Required(ErrorMessage = "Por favor ingrese la descripción de la historia de usuario.")]
-        [Display(Name = "Descripción : ")]
+        [Display(Name = "Descripción* : ")]
         public string descripcion { get; set; }
 
         [Display(Name = "Prioridad : ")]
