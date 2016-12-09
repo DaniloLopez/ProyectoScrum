@@ -147,7 +147,7 @@ namespace AppEjemploLayout.Controllers.MVCControllers
             TareaSprint tareaSprint = db.TareaSprint.Find(id);
             db.TareaSprint.Remove(tareaSprint);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Sprints", new { id = tareaSprint.SprintId });
         }
 
         protected override void Dispose(bool disposing)

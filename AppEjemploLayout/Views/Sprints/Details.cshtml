@@ -132,15 +132,15 @@
                                 @Html.DisplayFor(modelItem => item.estimacionHoras)
                             </td>
                             <td>                                
-                                <a href="@Html.ActionLink("Detalles", "Details", new { id = item.TareaSprintId })">
+                                <a href="@Url.Action("Details","TareaSprints", new { id = item.TareaSprintId })" >
                                     <span class="glyphicon glyphicon-eye-open"></span>
                                 </a>
 
-                                <a href="@Html.ActionLink("Editar", "Edit", new { id = item.TareaSprintId })">
+                                <a href="@Url.Action( "Edit","TareaSprints", new { id = item.TareaSprintId })">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </a>                                                                                                
                                 
-                                <a href="@Html.ActionLink("Eliminar", "EliminarIntegrante", new { id = item.TareaSprintId })">
+                                <a href="@Url.Action( "Delete","TareaSprints", new { id = item.TareaSprintId })">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>                                
                             </td>
