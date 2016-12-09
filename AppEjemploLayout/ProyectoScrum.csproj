@@ -184,6 +184,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\APIControllers\CrudTareasController.cs" />
     <Compile Include="Controllers\APIControllers\EquipoController.cs" />
+    <Compile Include="Controllers\APIControllers\GraficosController.cs" />
     <Compile Include="Controllers\APIControllers\TareasController.cs" />
     <Compile Include="Controllers\HistoriaUsuariosController.cs" />
     <Compile Include="Controllers\MVCControllers\AccountController.cs" />
@@ -263,6 +264,8 @@
     <Content Include="Scripts\controls.js" />
     <Content Include="Scripts\easing.js" />
     <Content Include="Scripts\flickerplate.min.js" />
+    <Content Include="Scripts\Graficos\DrawChart.js" />
+    <Content Include="Scripts\Graficos\SprintBurndown.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
