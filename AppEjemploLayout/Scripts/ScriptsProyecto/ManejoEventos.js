@@ -1,13 +1,17 @@
-﻿window.onload = function () {
-    
+﻿
+var urlOriginal = "";
+window.onload = function () {
+    urlOriginal = "" + window.location.href;
     cargarAutocompletado('nombreUsuario', '/api/AutoComplete', function () {
-
         var obj = $("#nombreUsuario").getSelectedItemData();
-
         var elementoBoton = document.getElementById("btn-insertarUsuario");
         elementoBoton.onclick = guardarIntegrante(obj.UsuarioId);
         //var elemId = document.getElementById("txt_id");
         //elemId.value = obj.correoElectronicoUsuario;
+    });
+    $('frm-agregar').submit(function (e) {
+        e.preventDefault();
+        window.history.back();
     });
 
     
@@ -27,12 +31,12 @@ function guardarIntegrante(IdUsuario) {
             contentType: 'application/json; charset=utf-8',
             dataType: "json",
             success: function (data) {
-                window.location.href = urlnew;
+                window.location.href = urlOriginal;
             }
         }).fail(
         function (xhr, textStatus, err) {
             alert("mal =(");
-            window.location.href = urlnew;
+            window.location.href = urlOriginal;
         });
     }
     
