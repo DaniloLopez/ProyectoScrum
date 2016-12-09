@@ -33,6 +33,7 @@ namespace AppEjemploLayout.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.proyectoId = historiaUsuario.ProyectoId;
             return View(historiaUsuario);
         }
 
