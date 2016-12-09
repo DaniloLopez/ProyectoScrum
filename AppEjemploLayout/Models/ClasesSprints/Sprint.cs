@@ -12,8 +12,12 @@ namespace AppEjemploLayout.Models.ClasesSprints
     {
         public int SprintId { get; set; }
 
+        [Required(ErrorMessage = "Por favor seleccione la duracion del sprint.")]
+        [Display(Name = "Duracion*: ")]
         public int duracion { get; set; }
 
+        
+        [Display(Name = "Estado : ")]
         public string estado { get; set; }
 
         public int ProyectoId { get; set; }
